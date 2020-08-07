@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 #Distance around ducklings 
 export var DISTANCE : int
+export var MIN_DISTANCE : int
 
 #Root - Scene
 onready var root = get_tree().get_root().get_child(0)
@@ -35,6 +36,7 @@ func _ready():
 	timeTween = Tween.new()
 	add_child(timeTween)
 
+onready var last_vector = Vector2(0, diff)
 func _physics_process(delta):
 	if mother != null:
 #		print(self.get_global_position().distance_to(mother.get_global_position()))
@@ -42,11 +44,24 @@ func _physics_process(delta):
 		if self.get_global_position().distance_to(mother.get_global_position()) > DISTANCE:
 			var correct_vector : Vector2
 			if mother.moving_side in pointing.keys():
+				last_vector = correct_vector
 				correct_vector = pointing[mother.moving_side]
+				
 			else:
-				correct_vector = Vector2(0, 0)
+				correct_vector = last_vector
 			timeTween.interpolate_property(self, "position", get_position(), mother.get_position() + correct_vector, 1.0, Tween.TRANS_BACK, Tween.EASE_OUT)
 			timeTween.start()
 			print(mother.moving_side)
-#		timeTween.stop_all()
-			
+		else:
+			print(self.get_global_position().distance_to(mother.get_global_position()))
+			if self.get_global_position().distance_to(mother.get_global_position()) < MIN_DISTANCE:
+				var correct_vector : Vector2
+				if mother.moving_side in pointing.keys():
+					last_vector = correct_vector
+					correct_vector = pointing[mother.moving_side]
+					
+				else:
+					correct_vector = last_vector
+				timeTween.interpolate_property(self, "position", get_position(), mother.get_position() + correct_vector + Vector2(MIN_DISTANCE, MIN_DISTANCE), 1.0, Tween.TRANS_BACK, Tween.EASE_OUT)
+				timeTween.start()
+				print("MIN")

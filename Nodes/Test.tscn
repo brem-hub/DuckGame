@@ -6,20 +6,19 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 358.688, 531.258 )
-
 [node name="River" parent="." instance=ExtResource( 1 )]
-visible = false
 position = Vector2( -2.85403, -124.039 )
 gravity_distance_scale = 3.619
 gravity_vec = Vector2( 100, 0 )
 linear_damp = 100.0
 PUSH_POWER = 20
 
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 358.688, 531.258 )
+
 [node name="Duckling" parent="." instance=ExtResource( 3 )]
 position = Vector2( 178.645, 537.466 )
-DISTANCE = 60
+MIN_DISTANCE = 30
 [connection signal="area_entered" from="River" to="Player" method="_on_River_area_entered"]
 [connection signal="body_entered" from="River" to="Player" method="_on_River_body_entered"]
 [connection signal="body_exited" from="River" to="Player" method="_on_River_body_exited"]
