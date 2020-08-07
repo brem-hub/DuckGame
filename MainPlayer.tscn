@@ -1,15 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/MainPlayer.gd" type="Script" id=1]
-[ext_resource path="res://Images/image.jpg" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 518.494, 286.599 )
 script = ExtResource( 1 )
+MOVE_SPEED = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+position = Vector2( 0, -3.77545 )
+texture = SubResource( 2 )
