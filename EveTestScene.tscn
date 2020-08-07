@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://BaseEnemy.tscn" type="PackedScene" id=1]
@@ -5,3 +6,8 @@
 [node name="EveTestScene" type="Node2D"]
 
 [node name="BaseEnemy" parent="." instance=ExtResource( 1 )]
+=======
+[gd_scene format=2]
+
+[node name="EveTestScene" type="Node2D"]
+>>>>>>> develop
