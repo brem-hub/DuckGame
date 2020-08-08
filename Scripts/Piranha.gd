@@ -12,7 +12,6 @@ var velocity = Vector2(0, 1)
 #Speed of the player
 var move_speed = 100
 var move_speed_normal = 100
-var move_speed_slow = 10
 
 func _ready():
 	player = root.get_node("Player")
@@ -24,8 +23,8 @@ func _physics_process(delta):
 	else:
 		_patrol()
 	#Temporary. Checks if "pausing"
-	if Input.is_action_pressed("speed_up"):
-		move_speed = move_speed_slow
+	if player.slow_down:
+		move_speed = move_speed_normal / player.SLOW_DOWN_MULTIPLIER
 	else:
 		move_speed = move_speed_normal
 	move_and_collide(velocity * move_speed * delta)

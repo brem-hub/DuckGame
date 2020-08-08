@@ -26,6 +26,8 @@ func _physics_process(delta):
 			speed = SPEED
 			
 	var move_distance = speed * delta
+	if mother.slow_down:
+		move_distance /= mother.SLOW_DOWN_MULTIPLIER
 	move_along_path(move_distance, delta)
 
 

@@ -42,6 +42,9 @@ func _ready():
 func _physics_process(delta):
 	
 	#Process the first duckling that follows the Duck
+	if ducklings.empty():
+		print("Error, no ducklings")
+		return
 	var new_path = nav2d.get_simple_path(ducklings[0].global_position, mother.global_position)
 	ducklings[0].path = new_path
 	

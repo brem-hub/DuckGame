@@ -2,11 +2,16 @@ extends KinematicBody2D
 
 
 #Speed of the player, cannot be changed
-export var MOVE_SPEED : int
+export var MOVE_SPEED_X : int
+export var MOVE_SPEED_Y : int
 #Max speed of the player, cannot be changed
 export var MAX_SPEED : int
 
 export var MAX_HEALTH : int
+export var SLOW_DOWN_STAMINA_MAX: int #How long can you slow down for
+export var SLOW_DOWN_STAMINA_USE: int #How long can you slow down for
+export var SLOW_DOWN_STAMINA_RECOVER: int #How long can you slow down for
+export var SLOW_DOWN_MULTIPLIER = 10 #How much does everything slow down by
 #Camera settings
 export var camera_distance_from_player = 400
 export var camera_shake_multiplier = 5
@@ -23,11 +28,16 @@ onready var duckling_controller = root.get_node("DucklingManager")
 var is_in_river : bool
 
 #Current speed, can be changed
-onready var move_speed = MOVE_SPEED
-onready var health = MAX_HEALTH
+onready var move_speed_x = MOVE_SPEED_X
+onready var move_speed_y = MOVE_SPEED_Y
 #Remaining health
+onready var health = MAX_HEALTH
+#Current stamina remaining for slow down
+onready var slow_down_stamina = SLOW_DOWN_STAMINA_MAX
 
 var moving_side : int
+var slow_down = false #Is time being slowed?
+var slow_down_recover = false #Ran out of slow down stamina?
 
 func _ready():
 	#Runs at the start
@@ -43,31 +53,42 @@ func _init():
 	moving_side = 0
 
 func _physics_process(delta):
+	#Slow Down
+	if Input.is_action_pressed("slow_down") && !slow_down_recover && slow_down_stamina != 0:
+		slow_down = true
+		slow_down_stamina = move_toward(slow_down_stamina, 0, delta * SLOW_DOWN_STAMINA_USE)
+		if slow_down_stamina == 0:
+			slow_down_recover = true
+	else:
+		slow_down = false
+		slow_down_stamina = move_toward(slow_down_stamina, SLOW_DOWN_STAMINA_MAX, delta * SLOW_DOWN_STAMINA_RECOVER)
+		if slow_down_stamina == SLOW_DOWN_STAMINA_MAX:
+			slow_down_recover = false
 	#Speeding Up when in the river and slowing down when is out of it.
 	#TODO: If needed, if not is_in_river: move_speed = MOVE_SPEED <- slow down immediately
 	if is_in_river:
-		if move_speed < MAX_SPEED:
-			move_speed += river.INC_SPEED
+		move_speed_y = move_toward(move_speed_y, MAX_SPEED, river.INC_SPEED)
+#		if move_speed_y < MAX_SPEED:
+#			move_speed_y += river.INC_SPEED
 	if not is_in_river:
-		if move_speed > MOVE_SPEED:
-			move_speed -= 2 * river.INC_SPEED
-		else:
-			move_speed = MOVE_SPEED	
-	var move_vec = Vector2()
+		move_speed_y = move_toward(move_speed_y, MOVE_SPEED_Y, 2*river.INC_SPEED)
+#		if move_speed_y > MOVE_SPEED_Y:
+#			move_speed_y -= 2 * river.INC_SPEED
+#		else:
+#			move_speed_y = MOVE_SPEED_Y	
+	var move_vec = Vector2(1, 0)
 	
-	if Input.is_action_pressed("speed_up"):
-		move_vec.x = 0.1
-	else:
-		move_vec.x = 1
-		
+	if slow_down:
+		move_vec.x /= SLOW_DOWN_MULTIPLIER
+	
 	if Input.is_action_pressed("move_up"):
 		moving_side = -1
-		move_vec.y -= 5
+		move_vec.y -= 1
 	if Input.is_action_pressed("move_down"):
 		moving_side = 1
-		move_vec.y += 5
+		move_vec.y += 1
 	
-	move_and_collide(move_vec * move_speed * delta)
+	move_and_collide(Vector2(move_vec.x * move_speed_x, move_vec.y * move_speed_y) * delta)
 	if is_in_river:
 		move_and_slide(Vector2.RIGHT * river.PUSH_POWER)
 
@@ -76,7 +97,7 @@ func _take_damage():
 	health -= 1
 	print("Health: " + str(health))
 	#Remove a duckling
-	duckling_controller.kill_duckling()
+	duckling_controller.kill_duckling() #rip duckling
 	#Shakith the camera
 	$Camera2D/Timer.start()
 
