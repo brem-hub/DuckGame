@@ -1,67 +1,50 @@
 extends KinematicBody2D
 
+#Unchangable speed var
+export var SPEED : int
+#Ucnhangable max_speed
+export var MAX_SPEED : int
 
-#Distance around ducklings 
-export var DISTANCE : int
-export var MIN_DISTANCE : int
+#Changable speed var
+onready var speed = SPEED
 
-#Root - Scene
-onready var root = get_tree().get_root().get_child(0)
+onready var mother = get_tree().get_root().get_child(0).get_node("Player")
+onready var river = get_tree().get_root().get_child(0).get_node("River")
+#Path to follow
+var path  : = PoolVector2Array() setget set_path
 
-#Duck - Player
-onready var mother = root.get_node("Player")
+func _process(delta):
+	if mother.is_in_river:
+		if speed < MAX_SPEED:
+			speed += river.INC_SPEED
+	else:
+		if speed > SPEED:
+			speed -= 2 * river.INC_SPEED
+		elif speed < SPEED:
+			speed = SPEED
+			
+	var move_distance = speed * delta
+	move_along_path(move_distance, delta)
+	print("DUCKLING: ", speed)
+	#print(global_position)
 
-#Tween for Interpolation
-var timeTween : Tween
-
-#Array of all ducklings
-var ducklings = []
-
-
-const diff = 40
-
-
-var pointing= {
-	1:  Vector2.UP,
-	3:  Vector2.DOWN,
-	5:  Vector2.LEFT,
-	9:  Vector2.RIGHT,
-	8: Vector2(diff, diff),
-	12:  Vector2(-diff, diff),
-	10:  Vector2(-diff, -diff),
-	6: Vector2(diff, -diff),
-}
-
-func _ready():
-	timeTween = Tween.new()
-	add_child(timeTween)
-
-onready var last_vector = Vector2(0, diff)
-func _physics_process(delta):
-	if mother != null:
-#		print(self.get_global_position().distance_to(mother.get_global_position()))
-		# if self.get_global_position().distance_to(mother.get_global_position() + Vector2(0, diff)) - will make ducklings jump behind
-		if self.get_global_position().distance_to(mother.get_global_position()) > DISTANCE:
-			var correct_vector : Vector2
-			if mother.moving_side in pointing.keys():
-				last_vector = correct_vector
-				correct_vector = pointing[mother.moving_side]
-				
-			else:
-				correct_vector = last_vector
-			timeTween.interpolate_property(self, "position", get_position(), mother.get_position() + correct_vector, 1.0, Tween.TRANS_BACK, Tween.EASE_OUT)
-			timeTween.start()
-			print(mother.moving_side)
-		else:
-			print(self.get_global_position().distance_to(mother.get_global_position()))
-			if self.get_global_position().distance_to(mother.get_global_position()) < MIN_DISTANCE:
-				var correct_vector : Vector2
-				if mother.moving_side in pointing.keys():
-					last_vector = correct_vector
-					correct_vector = pointing[mother.moving_side]
-					
-				else:
-					correct_vector = last_vector
-				timeTween.interpolate_property(self, "position", get_position(), mother.get_position() + correct_vector + Vector2(MIN_DISTANCE, MIN_DISTANCE), 1.0, Tween.TRANS_BACK, Tween.EASE_OUT)
-				timeTween.start()
-				print("MIN")
+func move_along_path(distance, delta):
+	var start_point = position
+	for i in range(path.size()):
+		var distance_next = start_point.distance_to(path[0])
+		if distance <= distance_next and distance >= 0.0:
+			position = start_point.linear_interpolate(path[0], distance /1)
+			break
+		elif distance < 0.0:
+			position = path[0]
+			set_process(false)
+			break
+		distance -= distance_next
+		start_point = path[0]
+		path.remove(0)
+	
+func set_path(value : PoolVector2Array) -> void:
+	path = value
+	if value.size() == 0:
+		return
+	set_process(true)

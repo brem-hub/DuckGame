@@ -14,6 +14,7 @@ script = ExtResource( 1 )
 MOVE_SPEED = 100
 
 [node name="Sprite" type="Sprite" parent="."]
+z_index = 2
 texture = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
