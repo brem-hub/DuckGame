@@ -23,9 +23,9 @@ func _init():
 func _physics_process(delta):
 	var move_vec = Vector2()
 	if Input.is_action_pressed("speed_up"):
-		move_vec.y = 0.1
+		move_vec.x = 0.1
 	else:
-		move_vec.y = 1
+		move_vec.x = 1
 	if Input.is_action_pressed("move_up"):
 		move_vec.y -= 1
 	if Input.is_action_pressed("move_down"):
