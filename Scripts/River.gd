@@ -3,6 +3,8 @@ extends Area2D
 #How strong the current is
 export var PUSH_POWER : int
 
+export var INC_SPEED : float
+
 onready var root = get_tree().get_root().get_child(0)
 
 #func _on_River_body_entered(body):
