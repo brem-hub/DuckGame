@@ -7,7 +7,6 @@ var velocity = Vector2()
 #Speed of the player
 var move_speed = 100
 var move_speed_normal = 200
-var move_speed_slow = 20
 
 func _ready():
 	#Gets the player
@@ -16,8 +15,8 @@ func _ready():
 func _physics_process(delta):
 	#Won't work later, only temp
 	#This causes the enemies to slow down
-	if Input.is_action_pressed("speed_up"):
-		move_speed = move_speed_slow
+	if player.slow_down:
+		move_speed = move_speed_normal / player.SLOW_DOWN_MULTIPLIER
 	else:
 		move_speed = move_speed_normal
 	move_and_collide(velocity * move_speed * delta)
