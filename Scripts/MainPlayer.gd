@@ -2,7 +2,11 @@ extends KinematicBody2D
 
 
 #Speed of the player, cannot be changed
-export  var  MOVE_SPEED : int
+export var MOVE_SPEED : int
+#Camera settings
+export var camera_distance_from_player = 400
+export var camera_shake_multiplier = 5
+export var camera_timer = 0.5
 
 #Root element (Scene)
 onready var root = get_tree().get_root().get_child(0)
@@ -18,6 +22,12 @@ var health = 3
 
 #Current speed, can be changed
 onready var move_speed = MOVE_SPEED
+
+func _ready():
+	#Runs at the start
+	$Camera2D.distance_from_player = camera_distance_from_player
+	$Camera2D.shake_multiplier = camera_shake_multiplier
+	$Camera2D/Timer.wait_time = camera_timer
 
 func _init():
 	#Assume that we begin on the ground 
@@ -54,8 +64,10 @@ func _physics_process(delta):
 func _take_damage():
 	#Code to run when taking damage
 	health -= 1
-	#Remove a duckling
 	print("Health: " + str(health))
+	#Remove a duckling
+	#Shakith the camera
+	$Camera2D/Timer.start()
 
 func _on_River_body_entered(body):
 	print("in the river")
