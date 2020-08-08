@@ -13,20 +13,18 @@ export var camera_limit_right = 0
 export var MAX_SPEED : int
 #Root element (Scene)
 onready var root = get_tree().get_root().get_child(0)
+onready var river = root.get_node("River")
 
 #If player is in the river
 var is_in_river : bool
 
 #River Node
-var river #root.get_node("River")
 
 #Current speed, can be changed
 onready var move_speed = MOVE_SPEED
 
 #Remaining health
 var health = 3
-
-
 var moving_side : int
 
 func _ready():
@@ -41,8 +39,7 @@ func _init():
 	#Assume that we begin on the ground 
 	is_in_river = true
 	moving_side = 0
-func _ready():
-	print(global_position)
+
 func _physics_process(delta):
 	#Speeding Up when in the river and slowing down when is out of it.
 	#TODO: If needed, if not is_in_river: move_speed = MOVE_SPEED <- slow down immediately
