@@ -1,24 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Nodes/River.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/MainPlayer.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Nodes/Duckling.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -234.065, 306.616 )
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+current = true
+
 [node name="River" parent="." instance=ExtResource( 1 )]
-position = Vector2( -2.85403, -124.039 )
+position = Vector2( 348.938, 307.428 )
 gravity_distance_scale = 3.619
 gravity_vec = Vector2( 100, 0 )
 linear_damp = 100.0
 PUSH_POWER = 20
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 358.688, 531.258 )
-
-[node name="Duckling" parent="." instance=ExtResource( 3 )]
-position = Vector2( 178.645, 537.466 )
-MIN_DISTANCE = 30
+INC_SPEED = 5.0
 [connection signal="area_entered" from="River" to="Player" method="_on_River_area_entered"]
 [connection signal="body_entered" from="River" to="Player" method="_on_River_body_entered"]
 [connection signal="body_exited" from="River" to="Player" method="_on_River_body_exited"]
