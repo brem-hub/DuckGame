@@ -11,14 +11,16 @@ extents = Vector2( 32, 32 )
 
 [node name="EveTestScene" type="Node2D"]
 
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -100, 0 )
+MOVE_SPEED = 150
+camera_limit_right = 3000
+
 [node name="Crocodile" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1798.6, 96.0059 )
 
 [node name="Crocodile2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2200.88, -112.473 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-MOVE_SPEED = 150
 
 [node name="Piranha" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1095.54, -106.404 )

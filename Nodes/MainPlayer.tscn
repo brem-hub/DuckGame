@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/exit.gd" type="Script" id=3]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -21,10 +22,30 @@ texture = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 400, 0 )
+pause_mode = 2
 current = true
 script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="Camera2D"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="Camera2D/Control"]
+margin_left = 18.1766
+margin_top = 170.406
+margin_right = 487.177
+margin_bottom = 263.406
+text = "Exit"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Timer" type="Timer" parent="Camera2D"]
 wait_time = 0.5
 one_shot = true
+[connection signal="pressed" from="Camera2D/Control/exit" to="Camera2D/Control/exit" method="_on_exit_pressed"]
