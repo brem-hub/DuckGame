@@ -13,7 +13,7 @@ onready var river = get_tree().get_root().get_child(0).get_node("River")
 #Path to follow
 var path  : = PoolVector2Array() setget set_path
 
-func _process(delta):
+func _physics_process(delta):
 	if mother.is_in_river:
 		if speed < MAX_SPEED:
 			speed += river.INC_SPEED
@@ -25,8 +25,7 @@ func _process(delta):
 			
 	var move_distance = speed * delta
 	move_along_path(move_distance, delta)
-	print("DUCKLING: ", speed)
-	#print(global_position)
+	#print("DUCKLING: ", speed)
 
 func move_along_path(distance, delta):
 	var start_point = position

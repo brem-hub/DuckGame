@@ -40,7 +40,7 @@ func _physics_process(delta):
 			move_speed -= 2 * river.INC_SPEED
 		else:
 			move_speed = MOVE_SPEED	
-	print("MAMA ", move_speed)
+	#print("MAMA ", move_speed)
 	var move_vec = Vector2()
 	
 	if Input.is_action_pressed("speed_up"):
@@ -67,10 +67,12 @@ func _take_damage():
 	print("Health: " + str(health))
 
 func _on_River_body_entered(body):
-	print("in the river")
-	is_in_river = true
+	if body.name == "Player":
+		print("in the river")
+		is_in_river = true
 
 
 func _on_River_body_exited(body):
-	print("out of the river")
-	is_in_river = false
+	if body.name == "Player":
+		print("out of the river")
+		is_in_river = false

@@ -2,7 +2,6 @@ extends Node
 
 
 export var NUMBER_OF_DUCKS : int
-
 export var OFFSET_BETWEEN_DUCKLINGS : int
 onready var duckling_prefub = preload("res://Nodes/Duckling.tscn")
 
@@ -26,7 +25,7 @@ func _ready():
 	spawn_ducklings()
 	
 #Each duckling gets it`s own path. The first one follows the duck, the others each other.
-func _process(delta):
+func _physics_process(delta):
 	#Process the first duckling that follows the Duck
 	var new_path = nav2d.get_simple_path(ducklings[0].global_position, mother.global_position)
 	ducklings[0].path = new_path

@@ -6,7 +6,7 @@
 [node name="Duckling" type="KinematicBody2D"]
 script = ExtResource( 2 )
 SPEED = 1
-MAX_SPEED = 6
+MAX_SPEED = 4
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0, 1, 0.0627451, 1 )
