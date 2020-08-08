@@ -44,6 +44,7 @@ func _take_damage():
 	#Code to run when taking damage
 	health -= 1
 	#Remove a duckling
+	print("Health: " + str(health))
 
 func _on_River_body_entered(body):
 	print("in the river")
