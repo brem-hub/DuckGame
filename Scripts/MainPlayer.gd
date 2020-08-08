@@ -7,6 +7,8 @@ export var MOVE_SPEED : int
 export var camera_distance_from_player = 400
 export var camera_shake_multiplier = 5
 export var camera_timer = 0.5
+export var camera_limit_left = 0
+export var camera_limit_right = 0
 
 #Root element (Scene)
 onready var root = get_tree().get_root().get_child(0)
@@ -15,7 +17,7 @@ onready var root = get_tree().get_root().get_child(0)
 var is_in_river : bool
 
 #River Node
-onready var river = root.get_node("River")
+var river #root.get_node("River")
 
 #Remaining health
 var health = 3
@@ -28,6 +30,8 @@ func _ready():
 	$Camera2D.distance_from_player = camera_distance_from_player
 	$Camera2D.shake_multiplier = camera_shake_multiplier
 	$Camera2D/Timer.wait_time = camera_timer
+	$Camera2D.limit_left = camera_limit_left
+	$Camera2D.limit_right = camera_limit_right
 
 func _init():
 	#Assume that we begin on the ground 
@@ -60,7 +64,6 @@ func _physics_process(delta):
 	move_and_collide(move_vec * move_speed * delta)
 	if is_in_river:
 		move_and_slide(Vector2.RIGHT * river.PUSH_POWER)
-	print(move_speed)
 func _take_damage():
 	#Code to run when taking damage
 	health -= 1
