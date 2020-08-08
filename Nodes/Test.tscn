@@ -26,13 +26,13 @@ INC_SPEED = 5.0
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -6905.69, 665.005 )
 MAX_SPEED = 400
+MAX_HEALTH = 3
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 current = true
 
 [node name="DucklingManager" type="Node" parent="."]
 script = ExtResource( 4 )
-NUMBER_OF_DUCKS = 5
 OFFSET_BETWEEN_DUCKLINGS = 100
 
 [node name="Navigation2D" type="Navigation2D" parent="."]

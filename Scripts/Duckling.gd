@@ -1,19 +1,21 @@
 extends KinematicBody2D
 
-#Unchangable speed var
+#Const speed var
 export var SPEED : int
-#Ucnhangable max_speed
+#Const  max_speed
 export var MAX_SPEED : int
 
-#Changable speed var
-onready var speed = SPEED
-
+#Nodes
 onready var mother = get_tree().get_root().get_child(0).get_node("Player")
 onready var river = get_tree().get_root().get_child(0).get_node("River")
+
+onready var speed = SPEED
+
 #Path to follow
 var path  : = PoolVector2Array() setget set_path
 
 func _physics_process(delta):
+	#Speed up/Slow down if the Duck is in the river
 	if mother.is_in_river:
 		if speed < MAX_SPEED:
 			speed += river.INC_SPEED
@@ -25,7 +27,7 @@ func _physics_process(delta):
 			
 	var move_distance = speed * delta
 	move_along_path(move_distance, delta)
-	#print("DUCKLING: ", speed)
+
 
 func move_along_path(distance, delta):
 	var start_point = position
