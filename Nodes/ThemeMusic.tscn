@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music/Minijam60_sounds/Music/Main_Theme.ogg" type="AudioStream" id=1]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -14.144
+autoplay = true

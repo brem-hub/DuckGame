@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
 #Script to slow down animation when in slow mode & set z index
-onready var root = get_tree().get_root().get_child(0)
+onready var root = get_tree().get_root().get_child(1)
 onready var player = root.get_node("Player")
 
 func _physics_process(delta):

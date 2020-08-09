@@ -8,7 +8,7 @@ export var OFFSET_BETWEEN_DUCKLINGS : int
 #Distance between the duck and the first duckling
 export var OFFSET_BETWEEN_DUCK : int
 #Nodes
-onready var root = get_tree().get_root().get_child(0)
+onready var root = get_tree().get_root().get_child(1)
 onready var mother = root.get_node("Player")
 #onready var river = root.get_node("River")
 onready var nav2d = root.get_node("Navigation2D")

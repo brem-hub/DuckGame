@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Main_Theme.ogg-540a7945a17231708def4bf35e3d0b35.oggstr"
+
+[deps]
+
+source_file="res://Music/Minijam60_sounds/Music/Main_Theme.ogg"
+dest_files=[ "res://.import/Main_Theme.ogg-540a7945a17231708def4bf35e3d0b35.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
