@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Player Scripts/DucklingManager.gd" type="Script" id=1]
 [ext_resource path="res://Images/icon.png" type="Texture" id=2]
@@ -7,19 +7,26 @@
 [ext_resource path="res://Nodes/MainPlayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/Player Scripts/Victory.gd" type="Script" id=6]
 [ext_resource path="res://Nodes/Obsticles/Rock.tscn" type="PackedScene" id=7]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[ext_resource path="res://Nodes/Obsticles/Log.tscn" type="PackedScene" id=8]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( -187.985, -273.734, 3539.79, -267.596, 3534.49, 265.059, -276.246, 273.009, -665.8, 135.208, -832.751, -92.6943, -618.099, -272.896 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6 ) ]
 outlines = [ PoolVector2Array( -187.985, -273.734, 3539.79, -267.596, 3534.49, 265.059, -276.246, 273.009, -665.8, 135.208, -832.751, -92.6943, -618.099, -272.896 ) ]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 50, 500 )
 
 [node name="EveTestScene" type="Node2D"]
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( -44.2748, 4.54413 )
+navpoly = SubResource( 2 )
 
 [node name="wall_t" type="StaticBody2D" parent="."]
 position = Vector2( 3000, -300 )
@@ -51,23 +58,33 @@ position = Vector2( 2200.88, -112.473 )
 
 [node name="Piranha" parent="Obsticles" instance=ExtResource( 4 )]
 position = Vector2( 1095.54, -106.404 )
-follow_player = false
 
 [node name="Piranha2" parent="Obsticles" instance=ExtResource( 4 )]
 position = Vector2( 1260.59, -112.344 )
+scale = Vector2( 2.4, 2.4 )
 
 [node name="Piranha3" parent="Obsticles" instance=ExtResource( 4 )]
 position = Vector2( 1411.27, 95.7302 )
-follow_player = false
 
 [node name="Rock" parent="Obsticles" instance=ExtResource( 7 )]
 position = Vector2( 286.883, 90.2711 )
+scale = Vector2( 2.65643, 2.7166 )
 
 [node name="Rock2" parent="Obsticles" instance=ExtResource( 7 )]
 position = Vector2( 541.355, -100.583 )
+scale = Vector2( 1.8, 1.8 )
 
 [node name="Rock3" parent="Obsticles" instance=ExtResource( 7 )]
 position = Vector2( 770.835, 99.3594 )
+scale = Vector2( 5.8, 5.8 )
+
+[node name="Log" parent="Obsticles" instance=ExtResource( 8 )]
+position = Vector2( 675.649, -25.8388 )
+scale = Vector2( 2.88, 2.88 )
+
+[node name="Log2" parent="Obsticles" instance=ExtResource( 8 )]
+position = Vector2( 996.78, 230.479 )
+scale = Vector2( -1.72, 1.72 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -100, 0 )
@@ -84,12 +101,6 @@ camera_distance_from_player = 300
 [node name="DucklingManager" type="Node" parent="."]
 script = ExtResource( 1 )
 OFFSET_BETWEEN_DUCKLINGS = 200
-
-[node name="Navigation2D" type="Navigation2D" parent="."]
-
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-position = Vector2( 1.16635, 0 )
-navpoly = SubResource( 2 )
 
 [node name="Victory" type="Area2D" parent="."]
 script = ExtResource( 6 )
