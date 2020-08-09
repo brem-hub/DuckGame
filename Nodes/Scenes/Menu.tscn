@@ -27,5 +27,31 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 517.355
+margin_top = 138.618
+margin_right = 1000.36
+margin_bottom = 563.618
+text = "You are a mother of four; Quakers, Waddles, Puddles, and Dave.
+
+In your home country, there is a shortage of poultry, and the people demmand nuggets. Looking for a new source for their nug-diction, you start to fear for your ducklings lives.
+
+Eventually, you decide after enough hungry stares of the nugget deprived, that you are going to flee to COUNTRY. However, there is a small problem. You are a duck. Ducks, famously, are not given passports, and therefore, you must migrate illegially, across a trechurous river.
+
+You can only hope that all of your ducklings make it accross safely.
+
+BUTTONS
+
+Move Up: W / UP arrow keys / UP dpad / UP left stick
+
+Move Down: S / DOWN arrow keys / DOWN dpad / DOWN  left stick
+
+Mothers Intuition: SHIFT / A / LEFT arrow / LEFT dpad / LEFT left stick / A button / B button
+
+Pause: ESC / START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="play" to="play" method="_on_pressed"]
 [connection signal="pressed" from="exit" to="exit" method="_on_exit_pressed"]

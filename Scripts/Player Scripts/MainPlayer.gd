@@ -49,6 +49,8 @@ func _ready():
 	#Assume that we begin on the ground 
 	#is_in_river = true
 	moving_side = 0
+	#Stamina UI Max Value
+	$Camera2D/Stamina.max_value = SLOW_DOWN_STAMINA_MAX
 
 func _physics_process(delta):
 	#Slow Down
@@ -62,6 +64,8 @@ func _physics_process(delta):
 		slow_down_stamina = move_toward(slow_down_stamina, SLOW_DOWN_STAMINA_MAX, delta * SLOW_DOWN_STAMINA_RECOVER)
 		if slow_down_stamina == SLOW_DOWN_STAMINA_MAX:
 			slow_down_recover = false
+	#Sets value of stamina bar
+	$Camera2D/Stamina.value = slow_down_stamina
 	#Speeding Up when in the river and slowing down when is out of it.
 	#TODO: If needed, if not is_in_river: move_speed = MOVE_SPEED <- slow down immediately
 	move_speed_y = move_toward(move_speed_y, MAX_SPEED, INC_SPEED)

@@ -37,7 +37,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "swim"
-frame = 3
+frame = 6
 playing = true
 offset = Vector2( -18, 0 )
 script = ExtResource( 17 )
@@ -51,6 +51,15 @@ pause_mode = 2
 position = Vector2( 400, 0 )
 current = true
 script = ExtResource( 2 )
+
+[node name="Stamina" type="ProgressBar" parent="Camera2D"]
+margin_left = -374.947
+margin_top = -280.589
+margin_right = 414.053
+margin_bottom = -266.589
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Timer" type="Timer" parent="Camera2D"]
 one_shot = true

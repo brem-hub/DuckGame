@@ -9,12 +9,12 @@
 [ext_resource path="res://Nodes/Obsticles/Rock.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Nodes/Obsticles/Log.tscn" type="PackedScene" id=8]
 
-[sub_resource type="NavigationPolygon" id=2]
+[sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -187.985, -273.734, 3539.79, -267.596, 3534.49, 265.059, -276.246, 273.009, -665.8, 135.208, -832.751, -92.6943, -618.099, -272.896 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6 ) ]
 outlines = [ PoolVector2Array( -187.985, -273.734, 3539.79, -267.596, 3534.49, 265.059, -276.246, 273.009, -665.8, 135.208, -832.751, -92.6943, -618.099, -272.896 ) ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -26,14 +26,14 @@ extents = Vector2( 50, 500 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 position = Vector2( -44.2748, 4.54413 )
-navpoly = SubResource( 2 )
+navpoly = SubResource( 1 )
 
 [node name="wall_t" type="StaticBody2D" parent="."]
 position = Vector2( 3000, -300 )
 scale = Vector2( 100, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_t"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="wall_t"]
 texture = ExtResource( 2 )
@@ -43,7 +43,7 @@ position = Vector2( 3000, 300 )
 scale = Vector2( 100, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_b"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="wall_b"]
 texture = ExtResource( 2 )
