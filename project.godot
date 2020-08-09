@@ -19,10 +19,6 @@ config/name="DuckGame"
 run/main_scene="res://Nodes/Scenes/Menu.tscn"
 config/icon="res://Images/icon.png"
 
-[autoload]
-
-ThemeMusic="*res://Nodes/ThemeMusic.tscn"
-
 [importer_defaults]
 
 texture={
