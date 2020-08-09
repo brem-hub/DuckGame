@@ -68,8 +68,10 @@ func _physics_process(delta):
 	$Camera2D/Control/Stamina.value = slow_down_stamina
 	#Speeding Up when in the river and slowing down when is out of it.
 	#TODO: If needed, if not is_in_river: move_speed = MOVE_SPEED <- slow down immediately
-	move_speed_x = move_toward(move_speed_x, MAX_SPEED, INC_SPEED * delta)
-	print(move_speed_x)
+	if slow_down:
+		move_speed_x = move_toward(move_speed_x, MAX_SPEED, (INC_SPEED * delta)/SLOW_DOWN_MULTIPLIER)
+	else:
+		move_speed_x = move_toward(move_speed_x, MAX_SPEED, INC_SPEED * delta)
 #	if is_in_river:
 #		if move_speed_y < MAX_SPEED:
 #			move_speed_y += river.INC_SPEED
@@ -91,7 +93,8 @@ func _physics_process(delta):
 		moving_side = 1
 		move_vec.y += 1
 	
-	move_and_collide(Vector2(move_vec.x * move_speed_x, move_vec.y * move_speed_y) * delta)
+	#move_and_collide(Vector2(move_vec.x * move_speed_x, move_vec.y * move_speed_y) * delta)
+	move_and_slide(Vector2(move_vec.x * move_speed_x, move_vec.y * move_speed_y))
 #	if is_in_river:
 #		move_and_slide(Vector2.RIGHT * river.PUSH_POWER)
 

@@ -22,8 +22,6 @@ func kill_duckling():
 	if ducklings.size() - 1 >= 0:
 		remove_child(ducklings[ducklings.size() -1])
 		ducklings.remove(ducklings.size() - 1)
-	else:
-		print("All the ducklings are dead - player should not have any health!")
 
 #Spawns ducklings at the start behind the Duck and puts them into the array.
 func spawn_ducklings():
@@ -48,7 +46,6 @@ func _physics_process(delta):
 	
 	#Process the first duckling that follows the Duck
 	if ducklings.empty():
-		print("Error, no ducklings")
 		return
 	var new_path = nav2d.get_simple_path(ducklings[0].global_position, Vector2(mother.global_position.x - OFFSET_BETWEEN_DUCK, mother.global_position.y))
 	ducklings[0].path = new_path
