@@ -15,7 +15,7 @@ func _physics_process(delta):
 	if victory:	return
 	position.x = player.position.x + distance_from_player
 	position.y = 0
-	if !$Timer.is_stopped() && !paused:
+	if !$Control/Timer.is_stopped() && !paused:
 		position.x += rand_range(-shake_multiplier, shake_multiplier)
 		position.y += rand_range(-shake_multiplier, shake_multiplier)
 	if Input.is_action_just_pressed("pause") && player.health != 0:
@@ -23,6 +23,6 @@ func _physics_process(delta):
 
 func _pause():
 	paused = !paused
-	$Timer.paused = paused
+	$Control/Timer.paused = paused
 	get_tree().paused = paused
-	$Pause.visible = paused
+	$Control/Pause.visible = paused

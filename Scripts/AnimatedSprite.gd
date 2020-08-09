@@ -6,7 +6,7 @@ onready var player = root.get_node("Player")
 
 func _physics_process(delta):
 	#Sets z index that way things will look like they are in a 3d space
-	z_index = -get_parent().position.y
+	z_index = get_parent().position.y
 	#Slow down animations when player does
 	if player.slow_down:
 		speed_scale = 0.5

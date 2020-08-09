@@ -1,15 +1,42 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/UI Scripts/move_to_scene.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/UI Scripts/exit.gd" type="Script" id=2]
+[ext_resource path="res://Images/Mother Duck/swim/duck7.png" type="Texture" id=3]
+[ext_resource path="res://Images/Mother Duck/swim/duck1.png" type="Texture" id=4]
+[ext_resource path="res://Images/Mother Duck/swim/duck4.png" type="Texture" id=5]
+[ext_resource path="res://Images/Mother Duck/swim/duck13.png" type="Texture" id=6]
+[ext_resource path="res://Images/Mother Duck/swim/duck3.png" type="Texture" id=7]
+[ext_resource path="res://Images/Mother Duck/swim/duck8.png" type="Texture" id=8]
+[ext_resource path="res://Images/Mother Duck/swim/duck12.png" type="Texture" id=9]
+[ext_resource path="res://Images/Mother Duck/swim/duck11.png" type="Texture" id=10]
+[ext_resource path="res://Images/Mother Duck/swim/duck14.png" type="Texture" id=11]
+[ext_resource path="res://Images/Mother Duck/swim/duck5.png" type="Texture" id=12]
+[ext_resource path="res://Images/Mother Duck/swim/duck6.png" type="Texture" id=13]
+[ext_resource path="res://Images/Mother Duck/swim/duck2.png" type="Texture" id=14]
+[ext_resource path="res://Images/Mother Duck/swim/duck9.png" type="Texture" id=15]
+[ext_resource path="res://Images/Mother Duck/swim/duck10.png" type="Texture" id=16]
 
-[node name="Menu" type="Node"]
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="play" type="Button" parent="."]
-margin_left = 69.3298
-margin_top = 61.6807
-margin_right = 295.33
-margin_bottom = 202.681
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 450.0
+margin_bottom = 250.0
 text = "Play"
 script = ExtResource( 1 )
 __meta__ = {
@@ -18,14 +45,53 @@ __meta__ = {
 scene_path = "res://Nodes/Scenes/EveTestScene.tscn"
 
 [node name="exit" type="Button" parent="."]
-margin_left = 62.6491
-margin_top = 372.333
-margin_right = 288.649
-margin_bottom = 513.333
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = -250.0
+margin_right = 450.0
+margin_bottom = -50.0
 text = "Exit"
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -525.0
+margin_top = -250.0
+margin_right = -51.0
+margin_bottom = 250.0
+text = "You are a mother of four; Quakers, Waddles, Puddles, and Dave.
+
+In your home country, there is a shortage of poultry, and the people demmand nuggets. Looking for a new source for their nug-diction, you start to fear for your ducklings lives.
+
+Eventually, you decide after enough hungry stares of the nugget deprived, that you are going to flee to Duckmark. However, there is a small problem. You are a duck. Ducks, famously, are not given passports, and therefore, you must migrate illegially, across a trechurous river.
+
+You can only hope that all of your ducklings make it accross safely.
+
+BUTTONS
+
+Move Up: W / UP arrow keys / UP dpad / UP left stick
+
+Move Down: S / DOWN arrow keys / DOWN dpad / DOWN  left stick
+
+Mothers Intuition: SHIFT / A / LEFT arrow / LEFT dpad / LEFT left stick / A button / B button
+
+Pause: ESC / START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 706.875, 471.087 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 1 )
+frame = 10
+playing = true
 [connection signal="pressed" from="play" to="play" method="_on_pressed"]
 [connection signal="pressed" from="exit" to="exit" method="_on_exit_pressed"]
