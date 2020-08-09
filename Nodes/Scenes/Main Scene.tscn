@@ -40,6 +40,7 @@ camera_distance_from_player = 200
 script = ExtResource( 1 )
 OFFSET_BETWEEN_DUCKLINGS = 10
 OFFSET_BETWEEN_DUCK = 20
+BEGINING_OFFSET = 300
 
 [node name="Obsticles" type="Node2D" parent="YSort"]
 position = Vector2( -49.1868, 20.6267 )

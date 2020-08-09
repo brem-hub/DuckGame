@@ -7,6 +7,9 @@ onready var duckling_prefub = preload("res://Nodes/Duckling.tscn")
 export var OFFSET_BETWEEN_DUCKLINGS : int
 #Distance between the duck and the first duckling
 export var OFFSET_BETWEEN_DUCK : int
+#Extra OFFSET at the begining so i would look like the ducklings catch up with the duck
+#		and don`t spawn in the same spot
+export var BEGINING_OFFSET : int
 #Nodes
 onready var root = get_tree().get_root().get_child(1)
 onready var mother = root.get_node("YSort").get_node("Player")
@@ -16,6 +19,7 @@ onready var nav2d = root.get_node("Navigation2D")
 
 
 onready	var NUMBER_OF_DUCKS = mother.MAX_HEALTH-1
+onready var extra = BEGINING_OFFSET
  
 var ducklings : Array
 
@@ -26,14 +30,16 @@ func kill_duckling():
 
 #Spawns ducklings at the start behind the Duck and puts them into the array.
 func spawn_ducklings():
+	#To make ducklings catch up with the duck at the begining
+	var Extra = Vector2(extra, 0)
 	var newDuck = duckling_prefub.instance()
-	var newPos = Vector2(mother.global_position.x - OFFSET_BETWEEN_DUCK, mother.global_position.y)
+	var newPos = Vector2(mother.global_position.x - OFFSET_BETWEEN_DUCK, mother.global_position.y) - Extra
 	newDuck.set_position(newPos)
 	self.add_child(newDuck)
 	ducklings.append(newDuck)
 	for i in range(1, NUMBER_OF_DUCKS):
 		newDuck = duckling_prefub.instance()
-		newPos = Vector2(mother.global_position.x - OFFSET_BETWEEN_DUCKLINGS * (i + 1), mother.global_position.y)
+		newPos = Vector2(mother.global_position.x - OFFSET_BETWEEN_DUCKLINGS * (i + 1), mother.global_position.y) - Extra
 		newDuck.set_position(newPos)
 		self.add_child(newDuck)
 		ducklings.append(newDuck)
