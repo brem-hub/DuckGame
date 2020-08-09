@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/UI Scripts/move_to_scene.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/UI Scripts/exit.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Images/Mother Duck/swim/duck2.png" type="Texture" id=14]
 [ext_resource path="res://Images/Mother Duck/swim/duck9.png" type="Texture" id=15]
 [ext_resource path="res://Images/Mother Duck/swim/duck10.png" type="Texture" id=16]
+[ext_resource path="res://Music/Minijam60_sounds/Music/Main_Theme.ogg" type="AudioStream" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -91,7 +92,10 @@ __meta__ = {
 position = Vector2( 706.875, 471.087 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
-frame = 10
 playing = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
 [connection signal="pressed" from="play" to="play" method="_on_pressed"]
 [connection signal="pressed" from="exit" to="exit" method="_on_exit_pressed"]
