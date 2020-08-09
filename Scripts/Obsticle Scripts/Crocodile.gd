@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var root = get_tree().get_root().get_child(0)
+onready var root = get_tree().get_root().get_child(1)
 onready var player = root.get_node("Player")
 var velocity = Vector2()
 

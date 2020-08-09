@@ -20,7 +20,7 @@ export var camera_shake_multiplier = 5
 export var camera_timer = 0.5
 
 #Nodes
-onready var root = get_tree().get_root().get_child(0)
+onready var root = get_tree().get_root().get_child(1)
 #onready var river = root.get_node("River")
 onready var duckling_controller = root.get_node("DucklingManager")
 
@@ -69,7 +69,7 @@ func _physics_process(delta):
 	#Speeding Up when in the river and slowing down when is out of it.
 	#TODO: If needed, if not is_in_river: move_speed = MOVE_SPEED <- slow down immediately
 	move_speed_x = move_toward(move_speed_x, MAX_SPEED, INC_SPEED * delta)
-	print(move_speed_x)
+	#print(move_speed_x)
 #	if is_in_river:
 #		if move_speed_y < MAX_SPEED:
 #			move_speed_y += river.INC_SPEED
@@ -96,6 +96,7 @@ func _physics_process(delta):
 #		move_and_slide(Vector2.RIGHT * river.PUSH_POWER)
 
 func _take_damage():
+	$Sounds/DamageQuack.play()
 	#Code to run when taking damage
 	health -= 1
 	#Remove a duckling
@@ -104,6 +105,8 @@ func _take_damage():
 	$Camera2D/Control/Timer.start()
 	if health == 0:
 		#game over
+		$"/root/ThemeMusic".stop()
+		$"Sounds/Bad Ending".play()
 		$Camera2D/Control/GameOver.visible = true
 		$Camera2D/Control/GameOver/text.text = game_over_text[0]
 		$Camera2D/Control/GameOver/text.text += game_over_text[round(rand_range(1, game_over_text.size()-1))]
@@ -111,14 +114,18 @@ func _take_damage():
 
 func _victory():
 	#Reach the end of the map
+	$"/root/ThemeMusic".stop()
 	$Camera2D/Control/Victory.visible = true
 	if health == MAX_HEALTH:
+		$"Sounds/Good Ending".play()
 		$Camera2D/Control/Victory/text.text = "Good Ending\n"
 		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark with all of your babies. You live the rest of your duck life watching your ducklings grow up to do duck things, like eat bread and terrarize children."
 	elif health != 1:
+		$"Sounds/Neutral Ending".play()
 		$Camera2D/Control/Victory/text.text = "Neutral Ending\n"
 		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark with most of your babies. Although heart-broken by the lose of your little ducklings, expecially your secret favorite, Dave, you have to put on a brave face for your remaining ducklings."
 	else:
+		$"Sounds/Bad Ending".play()
 		$Camera2D/Control/Victory/text.text = "Bad Ending\n"
 		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark, however your ducklings were not able to survive the trechurous journey. You fall into a great depression, forever mourning your lost ducklings. You often wonder if you were just a bit quicker, if you would have been able to save them..."
 	$Camera2D.victory = true
