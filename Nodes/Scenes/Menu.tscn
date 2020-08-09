@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/UI Scripts/move_to_scene.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UI Scripts/exit.gd" type="Script" id=2]
+
+[node name="Menu" type="Node"]
+
+[node name="play" type="Button" parent="."]
+margin_left = 69.3298
+margin_top = 61.6807
+margin_right = 295.33
+margin_bottom = 202.681
+text = "Play"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_path = "res://Nodes/Scenes/EveTestScene.tscn"
+
+[node name="exit" type="Button" parent="."]
+margin_left = 62.6491
+margin_top = 372.333
+margin_right = 288.649
+margin_bottom = 513.333
+text = "Exit"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="play" to="play" method="_on_pressed"]
+[connection signal="pressed" from="exit" to="exit" method="_on_exit_pressed"]
