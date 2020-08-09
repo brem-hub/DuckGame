@@ -68,7 +68,8 @@ func _physics_process(delta):
 	$Camera2D/Control/Stamina.value = slow_down_stamina
 	#Speeding Up when in the river and slowing down when is out of it.
 	#TODO: If needed, if not is_in_river: move_speed = MOVE_SPEED <- slow down immediately
-	move_speed_y = move_toward(move_speed_y, MAX_SPEED, INC_SPEED)
+	move_speed_x = move_toward(move_speed_x, MAX_SPEED, INC_SPEED * delta)
+	print(move_speed_x)
 #	if is_in_river:
 #		if move_speed_y < MAX_SPEED:
 #			move_speed_y += river.INC_SPEED
@@ -97,7 +98,6 @@ func _physics_process(delta):
 func _take_damage():
 	#Code to run when taking damage
 	health -= 1
-	print("Health: " + str(health))
 	#Remove a duckling
 	duckling_controller.kill_duckling() #rip duckling
 	#Shakith the camera
