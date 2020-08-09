@@ -1,24 +1,18 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Images/Mother Duck/swim/duck14.png" type="Texture" id=1]
+[ext_resource path="res://Images/Duckling/duckling5.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player Scripts/Duckling.gd" type="Script" id=2]
-[ext_resource path="res://Images/Mother Duck/swim/duck2.png" type="Texture" id=3]
-[ext_resource path="res://Images/Mother Duck/swim/duck5.png" type="Texture" id=4]
-[ext_resource path="res://Images/Mother Duck/swim/duck6.png" type="Texture" id=5]
-[ext_resource path="res://Images/Mother Duck/swim/duck9.png" type="Texture" id=6]
-[ext_resource path="res://Images/Mother Duck/swim/duck10.png" type="Texture" id=7]
-[ext_resource path="res://Images/Mother Duck/swim/duck3.png" type="Texture" id=8]
-[ext_resource path="res://Images/Mother Duck/swim/duck1.png" type="Texture" id=9]
-[ext_resource path="res://Images/Mother Duck/swim/duck12.png" type="Texture" id=10]
-[ext_resource path="res://Images/Mother Duck/swim/duck7.png" type="Texture" id=11]
-[ext_resource path="res://Images/Mother Duck/swim/duck13.png" type="Texture" id=12]
-[ext_resource path="res://Images/Mother Duck/swim/duck11.png" type="Texture" id=13]
-[ext_resource path="res://Images/Mother Duck/swim/duck4.png" type="Texture" id=14]
-[ext_resource path="res://Images/Mother Duck/swim/duck8.png" type="Texture" id=15]
+[ext_resource path="res://Images/Duckling/duckling7.png" type="Texture" id=3]
+[ext_resource path="res://Images/Duckling/duckling8.png" type="Texture" id=4]
+[ext_resource path="res://Images/Duckling/duckling1.png" type="Texture" id=5]
+[ext_resource path="res://Images/Duckling/duckling3.png" type="Texture" id=6]
+[ext_resource path="res://Images/Duckling/duckling4.png" type="Texture" id=7]
+[ext_resource path="res://Images/Duckling/duckling6.png" type="Texture" id=8]
+[ext_resource path="res://Images/Duckling/duckling2.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 9 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "swim",
 "speed": 10.0
@@ -30,10 +24,7 @@ SPEED = 2
 MAX_SPEED = 4
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-modulate = Color( 1, 0.988235, 0.266667, 1 )
-scale = Vector2( 0.5, 0.5 )
 z_index = 2
 frames = SubResource( 1 )
 animation = "swim"
-frame = 4
 playing = true
