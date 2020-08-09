@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/Player Scripts/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Player Scripts/Camera2D.gd" type="Script" id=2]
@@ -19,10 +19,12 @@
 [ext_resource path="res://Scripts/AnimatedSprite.gd" type="Script" id=17]
 [ext_resource path="res://Scripts/UI Scripts/exit.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/UI Scripts/move_to_scene.gd" type="Script" id=19]
-[ext_resource path="res://Music/Samples/duck_cutted.wav" type="AudioStream" id=20]
-[ext_resource path="res://Music/Minijam60_sounds/Music/Endings/neutral.ogg" type="AudioStream" id=21]
-[ext_resource path="res://Music/Minijam60_sounds/Music/Endings/bad.ogg" type="AudioStream" id=22]
-[ext_resource path="res://Music/Minijam60_sounds/Music/Endings/good.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Music/Music/Endings/neutral.ogg" type="AudioStream" id=20]
+[ext_resource path="res://Music/Samples/Quack_cutted.wav" type="AudioStream" id=21]
+[ext_resource path="res://Music/Music/Endings/good.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Music/Music/Endings/bad.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Fonts/Dynamic Fonts/Epic.tres" type="DynamicFont" id=24]
+[ext_resource path="res://Fonts/Dynamic Fonts/Arcade.tres" type="DynamicFont" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -45,7 +47,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "swim"
-frame = 9
+frame = 4
 playing = true
 offset = Vector2( -18, 0 )
 script = ExtResource( 17 )
@@ -63,9 +65,9 @@ script = ExtResource( 2 )
 
 [node name="Control" type="Control" parent="Camera2D"]
 margin_left = -512.0
-margin_top = -300.0
+margin_top = -301.682
 margin_right = 512.0
-margin_bottom = 300.0
+margin_bottom = 298.318
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -179,19 +181,54 @@ margin_left = 25.0
 margin_top = 25.0
 margin_right = -24.9999
 margin_bottom = -250.0
+grow_horizontal = 0
+grow_vertical = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="text" type="RichTextLabel" parent="Camera2D/Control/GameOver"]
+[node name="game_over" type="RichTextLabel" parent="Camera2D/Control/GameOver"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -462.0
-margin_top = 50.0
-margin_right = 462.0
-margin_bottom = 325.0
-text = "Game Over!
-Pro Tip: Don't get hit!"
+margin_left = -91.188
+margin_top = 44.7027
+margin_right = 109.812
+margin_bottom = 77.7027
+custom_fonts/normal_font = ExtResource( 24 )
+tab_size = 1
+text = "GAME OVER!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="captions" type="RichTextLabel" parent="Camera2D/Control/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -458.878
+margin_top = 105.0
+margin_right = 483.122
+margin_bottom = 151.0
+custom_fonts/normal_font = ExtResource( 25 )
+tab_size = 1
+text = "                                       Unfortunately, on  your  difficult  jorney  you  didn't manage  to  survive. 
+                                                                  You  and  your  ducklings  will  never  reach  Duckland."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="advice" type="RichTextLabel" parent="Camera2D/Control/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -189.596
+margin_top = 221.622
+margin_right = 222.404
+margin_bottom = 323.622
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/normal_font = ExtResource( 25 )
+tab_size = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -245,14 +282,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Title" type="RichTextLabel" parent="Camera2D/Control/Victory"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -151.973
+margin_top = 58.2705
+margin_right = 152.027
+margin_bottom = 76.2705
+custom_fonts/normal_font = ExtResource( 24 )
+text = "You have escaped!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="text" type="RichTextLabel" parent="Camera2D/Control/Victory"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -462.0
-margin_top = 50.0
-margin_right = 462.0
-margin_bottom = 325.0
-text = "You Win!!!"
+margin_left = -402.859
+margin_top = 105.0
+margin_right = 408.141
+margin_bottom = 197.0
+custom_fonts/normal_font = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -263,19 +313,19 @@ __meta__ = {
 pause_mode = 2
 
 [node name="DamageQuack" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 20 )
-volume_db = -12.0
+stream = ExtResource( 21 )
+volume_db = -6.0
 
 [node name="Good Ending" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 23 )
+stream = ExtResource( 22 )
 volume_db = -10.0
 
 [node name="Neutral Ending" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 21 )
+stream = ExtResource( 20 )
 volume_db = -12.0
 
 [node name="Bad Ending" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 22 )
+stream = ExtResource( 23 )
 volume_db = -15.0
 [connection signal="pressed" from="Camera2D/Control/Pause/Main Menu" to="Camera2D/Control/Pause/Main Menu" method="_on_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Pause/Exit" to="Camera2D/Control/Pause/Exit" method="_on_exit_pressed"]

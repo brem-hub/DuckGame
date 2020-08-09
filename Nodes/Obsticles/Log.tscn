@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Images/stick.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Obsticle Scripts/EnemyCollision.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Sprite.gd" type="Script" id=3]
+[ext_resource path="res://Music/sfx/WAV/wood.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.896, 5.415 )
@@ -18,4 +19,8 @@ script = ExtResource( 3 )
 position = Vector2( -1.95357, -0.255303 )
 rotation = 0.467748
 shape = SubResource( 1 )
+
+[node name="Wood Crack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
 [connection signal="body_entered" from="." to="." method="_on_BaseEnemy_body_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Images/rock.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Obsticle Scripts/EnemyCollision.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Sprite.gd" type="Script" id=3]
+[ext_resource path="res://Music/sfx/WAV/rock.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.95158
@@ -20,4 +21,9 @@ script = ExtResource( 3 )
 position = Vector2( -0.486875, 11.1002 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="Rock Crack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+bus = "Rock"
 [connection signal="body_entered" from="." to="." method="_on_BaseEnemy_body_entered"]

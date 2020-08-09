@@ -20,10 +20,10 @@ export var camera_shake_multiplier = 5
 export var camera_timer = 0.5
 
 #Nodes
-onready var root = get_tree().get_root().get_child(1)
+onready var root = get_tree().get_root().get_child(2)
 #onready var river = root.get_node("River")
-onready var duckling_controller = root.get_node("DucklingManager")
-
+#onready var duckling_controller = root.get_node("DucklingManager")
+onready var duckling_controller = root.get_node("YSort").get_node("DucklingManager")
 #If player is in the river
 #var is_in_river : bool
 
@@ -39,7 +39,10 @@ var moving_side : int
 var slow_down = false #Is time being slowed?
 var slow_down_recover = false #Ran out of slow down stamina?
 
-var game_over_text = ["Game Over\nPro Tip: ", "Don't Die", "Don't get hit", "Use the pause (shift)", "Get Good", "random_pro_tip.exe", "Read the Pro Tips", "See what you just did. Don't do that.", "WASD / Arrow Keys / D-pad / Left-Stick for movement. Press backwards to slow down time as well as Shift / A / B", "Have more children."]
+var game_over_text = ["Don't  Die", "Don't  get  hit", "Use  the  pause  (shift)", "Get good",
+ "You  have  almost  done  it", "Read  the  Pro  Tips", "See  what  you  just  did  Don't  do  that  again.",
+ "Sorry  Dave  you  will  not  see  the  Duckland.", "Poor mother.", "At  least  the  piranhas  are  not  hungry.",
+ "Dont  worry  your  children  can  dodge."]
 
 func _ready():
 	#Runs at the start
@@ -118,8 +121,8 @@ func _take_damage():
 		$"/root/ThemeMusic".stop()
 		$"Sounds/Bad Ending".play()
 		$Camera2D/Control/GameOver.visible = true
-		$Camera2D/Control/GameOver/text.text = game_over_text[0]
-		$Camera2D/Control/GameOver/text.text += game_over_text[round(rand_range(1, game_over_text.size()-1))]
+		#$Camera2D/Control/GameOver/text.text = game_over_text[0]
+		$Camera2D/Control/GameOver/advice.text += game_over_text[round(rand_range(0, game_over_text.size()-1))]
 		$Camera2D._pause()
 
 func _victory():
@@ -128,15 +131,15 @@ func _victory():
 	$Camera2D/Control/Victory.visible = true
 	if health == MAX_HEALTH:
 		$"Sounds/Good Ending".play()
-		$Camera2D/Control/Victory/text.text = "Good Ending\n"
+		#$Camera2D/Control/Victory/text.text = "Good Ending\n"
 		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark with all of your babies. You live the rest of your duck life watching your ducklings grow up to do duck things, like eat bread and terrarize children."
 	elif health != 1:
 		$"Sounds/Neutral Ending".play()
-		$Camera2D/Control/Victory/text.text = "Neutral Ending\n"
+		#$Camera2D/Control/Victory/text.text = "Neutral Ending\n"
 		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark with most of your babies. Although heart-broken by the lose of your little ducklings, expecially your secret favorite, Dave, you have to put on a brave face for your remaining ducklings."
 	else:
 		$"Sounds/Bad Ending".play()
-		$Camera2D/Control/Victory/text.text = "Bad Ending\n"
+		#$Camera2D/Control/Victory/text.text = "Bad Ending\n"
 		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark, however your ducklings were not able to survive the trechurous journey. You fall into a great depression, forever mourning your lost ducklings. You often wonder if you were just a bit quicker, if you would have been able to save them..."
 	$Camera2D.victory = true
 

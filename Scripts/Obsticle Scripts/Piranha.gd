@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-onready var root = get_tree().get_root().get_child(1)
-onready var player = root.get_node("Player")
+onready var root = get_tree().get_root().get_child(2)
+#onready var player = root.get_node("Player")
+onready var player = root.get_node("YSort").get_node("Player")
 #Option to set if the pirahna roams randomly or mimics the players movement
 #Will need some sort of visual difference between them though, maybe two different enemies? or just different colorations?
 var follow_player = false
@@ -9,9 +10,13 @@ var follow_player = false
 export var min_max_y = [0, 0]
 var velocity = Vector2(0, 1)
 
+var played : bool
 #Speed of the pirahna
 var move_speed = 100
 var move_speed_normal = 100
+
+func _ready():
+	played = false
 
 func _physics_process(delta):
 	#Redirects to the code that sets velocity based on if it follows the player or not
@@ -21,6 +26,12 @@ func _physics_process(delta):
 		_patrol()
 	#Checks if going up or down, or if hit
 	if $Area2D.hit:
+		if not played:
+			#TODO: Borders
+			$AttackSound.pitch_scale = 1 / self.scale.x + 0.2
+			print($AttackSound.pitch_scale)
+			$AttackSound.play()
+			played = true
 		if $Area2D/Sprite.animation == "down_swim":
 			$Area2D/Sprite.animation = "down_attack"
 			move_and_collide(Vector2.ZERO)

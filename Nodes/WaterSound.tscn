@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music/sfx/OGG/water_flowing.ogg" type="AudioStream" id=1]
+
+[node name="WaterSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -20.0
+autoplay = true
+bus = "Water"
