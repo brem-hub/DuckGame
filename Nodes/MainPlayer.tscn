@@ -19,10 +19,10 @@
 [ext_resource path="res://Scripts/AnimatedSprite.gd" type="Script" id=17]
 [ext_resource path="res://Scripts/UI Scripts/exit.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/UI Scripts/move_to_scene.gd" type="Script" id=19]
-[ext_resource path="res://Music/Samples/duck_cutted.wav" type="AudioStream" id=20]
-[ext_resource path="res://Music/Minijam60_sounds/Music/Endings/neutral.ogg" type="AudioStream" id=21]
-[ext_resource path="res://Music/Minijam60_sounds/Music/Endings/bad.ogg" type="AudioStream" id=22]
-[ext_resource path="res://Music/Minijam60_sounds/Music/Endings/good.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Music/Music/Endings/neutral.ogg" type="AudioStream" id=20]
+[ext_resource path="res://Music/Samples/Quack_cutted.wav" type="AudioStream" id=21]
+[ext_resource path="res://Music/Music/Endings/good.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Music/Music/Endings/bad.ogg" type="AudioStream" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -45,7 +45,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "swim"
-frame = 9
+frame = 6
 playing = true
 offset = Vector2( -18, 0 )
 script = ExtResource( 17 )
@@ -263,19 +263,19 @@ __meta__ = {
 pause_mode = 2
 
 [node name="DamageQuack" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 20 )
-volume_db = -12.0
-
-[node name="Good Ending" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource( 23 )
-volume_db = -10.0
-
-[node name="Neutral Ending" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 21 )
 volume_db = -12.0
 
-[node name="Bad Ending" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Good Ending" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 22 )
+volume_db = -10.0
+
+[node name="Neutral Ending" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 20 )
+volume_db = -12.0
+
+[node name="Bad Ending" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 23 )
 volume_db = -15.0
 [connection signal="pressed" from="Camera2D/Control/Pause/Main Menu" to="Camera2D/Control/Pause/Main Menu" method="_on_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Pause/Exit" to="Camera2D/Control/Pause/Exit" method="_on_exit_pressed"]

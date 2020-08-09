@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/UI Scripts/move_to_scene.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/UI Scripts/exit.gd" type="Script" id=2]
@@ -16,6 +16,13 @@
 [ext_resource path="res://Images/Mother Duck/swim/duck2.png" type="Texture" id=14]
 [ext_resource path="res://Images/Mother Duck/swim/duck9.png" type="Texture" id=15]
 [ext_resource path="res://Images/Mother Duck/swim/duck10.png" type="Texture" id=16]
+[ext_resource path="res://Fonts/Dynamic Fonts/Arcade.tres" type="DynamicFont" id=17]
+[ext_resource path="res://Images/A_key.png" type="Texture" id=18]
+[ext_resource path="res://tileset/tileset.tres" type="TileSet" id=19]
+[ext_resource path="res://Images/W_key.png" type="Texture" id=20]
+[ext_resource path="res://Images/S_key.png" type="Texture" id=21]
+[ext_resource path="res://Fonts/Dynamic Fonts/Epic.tres" type="DynamicFont" id=22]
+[ext_resource path="res://Images/SHIFT_key.png" type="Texture" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -32,11 +39,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 19 )
+cell_size = Vector2( 50, 50 )
+format = 1
+tile_data = PoolIntArray( 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0, 5, 3, 0, 6, 3, 0, 7, 3, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 11, 3, 0, 12, 3, 0, 13, 3, 0, 14, 3, 0, 15, 3, 0, 16, 3, 0, 17, 3, 0, 18, 3, 0, 19, 3, 0, 20, 3, 0, 65536, 3, 0, 65537, 3, 0, 65538, 3, 0, 65539, 3, 0, 65540, 3, 0, 65541, 3, 0, 65542, 3, 0, 65543, 3, 0, 65544, 3, 0, 65545, 3, 0, 65546, 3, 0, 65547, 3, 0, 65548, 3, 0, 65549, 3, 0, 65550, 3, 0, 65551, 3, 0, 65552, 3, 0, 65553, 3, 0, 65554, 3, 0, 65555, 3, 0, 65556, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131081, 3, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131085, 5, 0, 131086, 5, 0, 131087, 5, 0, 131088, 5, 0, 131089, 5, 0, 131090, 5, 0, 131091, 5, 0, 131092, 5, 0, 196608, 3, 0, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 3, 0, 196613, 3, 0, 196614, 3, 0, 196615, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0, 196619, 3, 0, 196620, 5, 0, 196621, 5, 0, 196622, 5, 0, 196623, 5, 0, 196624, 5, 0, 196625, 5, 0, 196626, 5, 0, 196627, 5, 0, 196628, 5, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 262152, 4, 0, 262153, 4, 0, 262154, 4, 0, 262155, 4, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 4, 0, 262161, 4, 0, 262162, 4, 0, 262163, 4, 0, 262164, 4, 0, 327680, 5, 0, 327681, 5, 0, 327682, 5, 0, 327683, 5, 0, 327684, 5, 0, 327685, 5, 0, 327686, 5, 0, 327687, 5, 0, 327688, 5, 0, 327689, 5, 0, 327690, 5, 0, 327691, 5, 0, 327692, 5, 0, 327693, 5, 0, 327694, 5, 0, 327695, 5, 0, 327696, 5, 0, 327697, 5, 0, 327698, 5, 0, 327699, 5, 0, 327700, 5, 0, 393216, 6, 0, 393217, 6, 0, 393218, 6, 0, 393219, 6, 0, 393220, 6, 0, 393221, 6, 0, 393222, 6, 0, 393223, 6, 0, 393224, 6, 0, 393225, 8, 0, 393226, 8, 0, 393227, 8, 0, 393228, 8, 0, 393229, 8, 0, 393230, 8, 0, 393231, 8, 0, 393232, 8, 0, 393233, 7, 0, 393234, 7, 0, 393235, 7, 0, 393236, 7, 0, 458752, 9, 0, 458753, 9, 0, 458754, 9, 0, 458755, 9, 0, 458756, 9, 0, 458757, 9, 0, 458758, 9, 0, 458759, 9, 0, 458760, 9, 0, 458761, 9, 0, 458762, 9, 0, 458763, 9, 0, 458764, 9, 0, 458765, 9, 0, 458766, 9, 0, 458767, 9, 0, 458768, 9, 0, 458769, 9, 0, 458770, 9, 0, 458771, 9, 0, 458772, 9, 0, 524288, 9, 0, 524289, 9, 0, 524290, 9, 0, 524291, 9, 0, 524292, 9, 0, 524293, 10, 0, 524294, 10, 0, 524295, 10, 0, 524296, 10, 0, 524297, 10, 0, 524298, 10, 0, 524299, 10, 0, 524300, 9, 0, 524301, 9, 0, 524302, 9, 0, 524303, 9, 0, 524304, 9, 0, 524305, 9, 0, 524306, 9, 0, 524307, 9, 0, 524308, 9, 0, 589824, 10, 0, 589825, 10, 0, 589826, 9, 0, 589827, 10, 0, 589828, 10, 0, 589829, 10, 0, 589830, 10, 0, 589831, 9, 0, 589832, 9, 0, 589833, 9, 0, 589834, 10, 0, 589835, 10, 0, 589836, 11, 0, 589837, 9, 0, 589838, 9, 0, 589839, 9, 0, 589840, 9, 0, 589841, 9, 0, 589842, 9, 0, 589843, 9, 0, 589844, 9, 0, 655360, 9, 0, 655361, 10, 0, 655362, 10, 0, 655363, 10, 0, 655364, 10, 0, 655365, 10, 0, 655366, 10, 0, 655367, 10, 0, 655368, 10, 0, 655369, 10, 0, 655370, 10, 0, 655371, 10, 0, 655372, 11, 0, 655373, 10, 0, 655374, 10, 0, 655375, 10, 0, 655376, 10, 0, 655377, 10, 0, 655378, 9, 0, 655379, 9, 0, 655380, 9, 0, 720896, 9, 0, 720897, 9, 0, 720898, 9, 0, 720899, 9, 0, 720900, 9, 0, 720901, 9, 0, 720902, 9, 0, 720903, 9, 0, 720904, 9, 0, 720905, 9, 0, 720906, 9, 0, 720907, 9, 0, 720908, 9, 0, 720909, 9, 0, 720910, 9, 0, 720911, 9, 0, 720912, 9, 0, 720913, 9, 0, 720914, 9, 0, 720915, 9, 0, 720916, 9, 0 )
+
 [node name="play" type="Button" parent="."]
-margin_left = 50.0
-margin_top = 50.0
-margin_right = 450.0
-margin_bottom = 250.0
+anchor_left = 0.000921756
+anchor_right = 0.000921756
+margin_left = 27.0561
+margin_top = 362.0
+margin_right = 266.056
+margin_bottom = 510.0
 text = "Play"
 script = ExtResource( 1 )
 __meta__ = {
@@ -47,10 +62,10 @@ scene_path = "res://Nodes/Scenes/Main Scene.tscn"
 [node name="exit" type="Button" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = -250.0
-margin_right = 450.0
-margin_bottom = -50.0
+margin_left = 328.582
+margin_top = -238.0
+margin_right = 533.582
+margin_bottom = -87.0
 text = "Exit"
 script = ExtResource( 2 )
 __meta__ = {
@@ -62,27 +77,18 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -525.0
-margin_top = -250.0
-margin_right = -51.0
-margin_bottom = 250.0
-text = "You are a mother of four; Quakers, Waddles, Puddles, and Dave.
+margin_left = -996.0
+margin_top = -263.921
+margin_right = -522.0
+margin_bottom = 35.0793
+custom_fonts/normal_font = ExtResource( 17 )
+text = "You are a mother of four:  Quakers, Waddles, Puddles, and Dave.
 
 In your home country, there is a shortage of poultry, and the people demmand nuggets. Looking for a new source for their nug-diction, you start to fear for your ducklings lives.
 
-Eventually, you decide after enough hungry stares of the nugget deprived, that you are going to flee to Duckmark. However, there is a small problem. You are a duck. Ducks, famously, are not given passports, and therefore, you must migrate illegially, across a trechurous river.
+Eventually, you decide after enough hungry stares of the nugget deprived, that you are going to flee to Duckmark - the Duck paradaise... However, being a duck, you were not issued a passport( ducks, famously, are not given passports), and therefore, you must migrate illegially, across a trechurous river.
 
-You can only hope that all of your ducklings make it accross safely.
-
-BUTTONS
-
-Move Up: W / UP arrow keys / UP dpad / UP left stick
-
-Move Down: S / DOWN arrow keys / DOWN dpad / DOWN  left stick
-
-Mothers Intuition: SHIFT / A / LEFT arrow / LEFT dpad / LEFT left stick / A button / B button
-
-Pause: ESC / START"
+You can only hope that all of your ducklings make it accross safely."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -93,5 +99,62 @@ scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
 frame = 6
 playing = true
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Buttons"]
+position = Vector2( 891.751, 255.215 )
+scale = Vector2( 0.19458, 0.193676 )
+texture = ExtResource( 18 )
+
+[node name="Sprite2" type="Sprite" parent="Buttons"]
+position = Vector2( 804.599, 99.4188 )
+scale = Vector2( 0.203636, 0.208311 )
+texture = ExtResource( 21 )
+
+[node name="Sprite3" type="Sprite" parent="Buttons"]
+position = Vector2( 637.694, 101.693 )
+scale = Vector2( 0.217184, 0.212521 )
+texture = ExtResource( 20 )
+
+[node name="Sprite4" type="Sprite" parent="Buttons"]
+
+[node name="Sprite5" type="Sprite" parent="Buttons"]
+position = Vector2( 700.531, 256.25 )
+scale = Vector2( 0.609375, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 589.632
+margin_top = 39.0
+margin_right = 683.632
+margin_bottom = 64.0
+custom_fonts/normal_font = ExtResource( 22 )
+text = "GO UP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 742.705
+margin_top = 36.0793
+margin_right = 877.705
+margin_bottom = 61.0793
+custom_fonts/normal_font = ExtResource( 22 )
+text = "GO DOWN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+margin_left = 637.694
+margin_top = 192.25
+margin_right = 948.694
+margin_bottom = 217.25
+custom_fonts/normal_font = ExtResource( 22 )
+text = "MOTHER'S INTUITION"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="play" to="play" method="_on_pressed"]
 [connection signal="pressed" from="exit" to="exit" method="_on_exit_pressed"]
