@@ -131,15 +131,15 @@ func _victory():
 	$Camera2D/Control/Victory.visible = true
 	if health == MAX_HEALTH:
 		$"Sounds/Good Ending".play()
-		$Camera2D/Control/Victory/text.text = "Good Ending\n"
+		#$Camera2D/Control/Victory/text.text = "Good Ending\n"
 		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark with all of your babies. You live the rest of your duck life watching your ducklings grow up to do duck things, like eat bread and terrarize children."
 	elif health != 1:
 		$"Sounds/Neutral Ending".play()
-		$Camera2D/Control/Victory/text.text = "Neutral Ending\n"
+		#$Camera2D/Control/Victory/text.text = "Neutral Ending\n"
 		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark with most of your babies. Although heart-broken by the lose of your little ducklings, expecially your secret favorite, Dave, you have to put on a brave face for your remaining ducklings."
 	else:
 		$"Sounds/Bad Ending".play()
-		$Camera2D/Control/Victory/text.text = "Bad Ending\n"
+		#$Camera2D/Control/Victory/text.text = "Bad Ending\n"
 		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark, however your ducklings were not able to survive the trechurous journey. You fall into a great depression, forever mourning your lost ducklings. You often wonder if you were just a bit quicker, if you would have been able to save them..."
 	$Camera2D.victory = true
 

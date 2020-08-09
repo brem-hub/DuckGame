@@ -47,7 +47,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "swim"
-frame = 11
+frame = 4
 playing = true
 offset = Vector2( -18, 0 )
 script = ExtResource( 17 )
@@ -282,14 +282,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Title" type="RichTextLabel" parent="Camera2D/Control/Victory"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -151.973
+margin_top = 58.2705
+margin_right = 152.027
+margin_bottom = 76.2705
+custom_fonts/normal_font = ExtResource( 24 )
+text = "You have escaped!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="text" type="RichTextLabel" parent="Camera2D/Control/Victory"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -462.0
-margin_top = 50.0
-margin_right = 462.0
-margin_bottom = 325.0
-text = "You Win!!!"
+margin_left = -402.859
+margin_top = 105.0
+margin_right = 408.141
+margin_bottom = 197.0
+custom_fonts/normal_font = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

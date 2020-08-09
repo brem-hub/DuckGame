@@ -30,13 +30,13 @@ __meta__ = {
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 489.203
+margin_left = 533.253
 margin_top = 180.0
-margin_right = 1053.2
+margin_right = 1097.25
 margin_bottom = 349.0
 focus_mode = 2
 custom_fonts/normal_font = ExtResource( 4 )
-text = "	ART DISAGNER:
+text = "	ART DESAGNER:
 		
 		 Quill"
 selection_enabled = true
@@ -46,17 +46,18 @@ __meta__ = {
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 margin_left = 14.0
-margin_top = 393.0
-margin_right = 1040.0
-margin_bottom = 600.0
+margin_top = 368.0
+margin_right = 933.0
+margin_bottom = 575.0
 focus_mode = 2
 custom_fonts/normal_font = ExtResource( 4 )
 text = "		          PROGRAMMERS: 
 		
-Evelyn (FriTooTheEnd)              Brem -
-			 
-	                       https://bremka.itch.io
-			"
+				 	Evelyn - 
+		 https://linktr.ee/FriTooTheEnd 
+		
+			  		Brem -
+		  	https://bremka.itch.io	"
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -69,7 +70,7 @@ margin_right = 747.0
 margin_bottom = 349.0
 focus_mode = 2
 custom_fonts/normal_font = ExtResource( 4 )
-text = "	   SOUND DISAGNER:
+text = "	   SOUND DESAGNER:
 		
 		 Taniel Kuntu -
 		

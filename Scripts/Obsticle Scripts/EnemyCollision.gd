@@ -20,6 +20,11 @@ func _on_BaseEnemy_body_entered(body):
 		if "Log" in self.get_name():
 			$"Wood Crack".pitch_scale = 1 / self.scale.x + 0.2
 			$"Wood Crack".play()
+			
+		if "Rock" in self.get_name():
+			$"Rock Crack".pitch_scale = 1 / self.scale.x
+			$"Rock Crack".play()
+			
 		#Makes the player take damage
 		body._take_damage()
 		hit = true
