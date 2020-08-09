@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Scripts/UI Scripts/move_to_scene.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Dynamic Fonts/Title.tres" type="DynamicFont" id=2]
 [ext_resource path="res://tileset/tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Fonts/Dynamic Fonts/Credits.tres" type="DynamicFont" id=4]
@@ -84,6 +85,9 @@ margin_top = 25.5592
 margin_right = 77.0
 margin_bottom = 86.5592
 text = "Back"
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+scene_path = "res://Nodes/Scenes/Menu.tscn"
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

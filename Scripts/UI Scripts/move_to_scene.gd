@@ -15,3 +15,4 @@ func _on_pressed():
 			$"/root/ThemeMusic".play()
 			
 	get_tree().change_scene(scene_path)
+
