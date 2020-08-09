@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Player Scripts/DucklingManager.gd" type="Script" id=1]
+[ext_resource path="res://Nodes/MainPlayer.tscn" type="PackedScene" id=2]
+
+[node name="Main Scene" type="Node2D"]
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+MOVE_SPEED_X = 150
+MOVE_SPEED_Y = 200
+MAX_SPEED = 500
+INC_SPEED = 5
+MAX_HEALTH = 5
+SLOW_DOWN_STAMINA_MAX = 100
+SLOW_DOWN_STAMINA_USE = 20
+SLOW_DOWN_STAMINA_RECOVER = 30
+camera_distance_from_player = 0
+
+[node name="DucklingManager" type="Node" parent="."]
+script = ExtResource( 1 )
