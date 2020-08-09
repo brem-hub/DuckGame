@@ -21,7 +21,7 @@ animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "swim",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [node name="Duckling" type="KinematicBody2D"]
@@ -35,3 +35,5 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 2
 frames = SubResource( 1 )
 animation = "swim"
+frame = 2
+playing = true
