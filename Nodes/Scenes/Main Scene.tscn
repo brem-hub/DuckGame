@@ -142,7 +142,7 @@ rotation = 0.283507
 scale = Vector2( 0.727865, 0.727865 )
 
 [node name="Piranha4" parent="Obsticles" instance=ExtResource( 5 )]
-position = Vector2( 2943.6, -131.76 )
+position = Vector2( 2943.6, -133.02 )
 
 [node name="Rock17" parent="Obsticles" instance=ExtResource( 7 )]
 position = Vector2( 3103.27, -44.2262 )

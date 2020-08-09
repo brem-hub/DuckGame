@@ -47,7 +47,6 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "swim"
-frame = 6
 playing = true
 offset = Vector2( -18, 0 )
 script = ExtResource( 17 )
