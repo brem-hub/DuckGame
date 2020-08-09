@@ -4,7 +4,7 @@ onready var root = get_tree().get_root().get_child(0)
 onready var player = root.get_node("Player")
 #Option to set if the pirahna roams randomly or mimics the players movement
 #Will need some sort of visual difference between them though, maybe two different enemies? or just different colorations?
-export var follow_player = true
+var follow_player = false
 #The min and max y value the pirahna will patrol
 export var min_max_y = [0, 0]
 var velocity = Vector2(0, 1)
@@ -19,12 +19,25 @@ func _physics_process(delta):
 		_follow_player()
 	else:
 		_patrol()
-	#Temporary. Checks if "pausing"
-	if player.slow_down:
-		move_speed = move_speed_normal / player.SLOW_DOWN_MULTIPLIER
+	#Checks if going up or down, or if hit
+	if $Area2D.hit:
+		if $Area2D/Sprite.animation == "down_swim":
+			$Area2D/Sprite.animation = "down_attack"
+			move_and_collide(Vector2.ZERO)
+		elif $Area2D/Sprite.animation == "up_swim":
+			$Area2D/Sprite.animation = "up_attack"
+			move_and_collide(Vector2.ZERO)
 	else:
-		move_speed = move_speed_normal
-	move_and_collide(velocity * move_speed * delta)
+		if velocity.y > 0:
+			$Area2D/Sprite.animation = "down_swim"
+		else:
+			$Area2D/Sprite.animation = "up_swim"
+		#Checks if pausing
+		if player.slow_down:
+			move_speed = move_speed_normal / player.SLOW_DOWN_MULTIPLIER
+		else:
+			move_speed = move_speed_normal
+		move_and_collide(velocity * move_speed * delta)
 
 func _follow_player():
 	#Sets velocity to either go up or down, based on players position.

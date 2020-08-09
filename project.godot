@@ -16,7 +16,6 @@ _global_script_class_icons={
 [application]
 
 config/name="DuckGame"
-run/main_scene="res://Nodes/Scenes/EveTestScene.tscn"
 config/icon="res://Images/icon.png"
 
 [importer_defaults]
