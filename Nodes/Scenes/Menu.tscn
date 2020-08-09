@@ -58,7 +58,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scene_path = "res://Nodes/Scenes/EveTestScene.tscn"
+scene_path = "res://Nodes/Scenes/Main Scene.tscn"
 
 [node name="exit" type="Button" parent="."]
 anchor_top = 1.0
@@ -153,5 +153,6 @@ text = "MOTHER`S INTUITION"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="play" to="play" method="_on_pressed"]
 [connection signal="pressed" from="exit" to="exit" method="_on_exit_pressed"]
