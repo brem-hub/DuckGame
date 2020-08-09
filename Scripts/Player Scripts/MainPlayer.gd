@@ -45,12 +45,12 @@ func _ready():
 	#Runs at the start
 	$Camera2D.distance_from_player = camera_distance_from_player
 	$Camera2D.shake_multiplier = camera_shake_multiplier
-	$Camera2D/Timer.wait_time = camera_timer
+	$Camera2D/Control/Timer.wait_time = camera_timer
 	#Assume that we begin on the ground 
 	#is_in_river = true
 	moving_side = 0
 	#Stamina UI Max Value
-	$Camera2D/Stamina.max_value = SLOW_DOWN_STAMINA_MAX
+	$Camera2D/Control/Stamina.max_value = SLOW_DOWN_STAMINA_MAX
 
 func _physics_process(delta):
 	#Slow Down
@@ -65,7 +65,7 @@ func _physics_process(delta):
 		if slow_down_stamina == SLOW_DOWN_STAMINA_MAX:
 			slow_down_recover = false
 	#Sets value of stamina bar
-	$Camera2D/Stamina.value = slow_down_stamina
+	$Camera2D/Control/Stamina.value = slow_down_stamina
 	#Speeding Up when in the river and slowing down when is out of it.
 	#TODO: If needed, if not is_in_river: move_speed = MOVE_SPEED <- slow down immediately
 	move_speed_y = move_toward(move_speed_y, MAX_SPEED, INC_SPEED)
@@ -101,26 +101,26 @@ func _take_damage():
 	#Remove a duckling
 	duckling_controller.kill_duckling() #rip duckling
 	#Shakith the camera
-	$Camera2D/Timer.start()
+	$Camera2D/Control/Timer.start()
 	if health == 0:
 		#game over
-		$Camera2D/GameOver.visible = true
-		$Camera2D/GameOver/text.text = game_over_text[0]
-		$Camera2D/GameOver/text.text += game_over_text[round(rand_range(1, game_over_text.size()-1))]
+		$Camera2D/Control/GameOver.visible = true
+		$Camera2D/Control/GameOver/text.text = game_over_text[0]
+		$Camera2D/Control/GameOver/text.text += game_over_text[round(rand_range(1, game_over_text.size()-1))]
 		$Camera2D._pause()
 
 func _victory():
 	#Reach the end of the map
-	$Camera2D/Victory.visible = true
+	$Camera2D/Control/Victory.visible = true
 	if health == MAX_HEALTH:
-		$Camera2D/Victory/text.text = "Good Ending\n"
-		$Camera2D/Victory/text.text += "You manage to escape to COUNTRY_NAME with all of your babies. You live the rest of your duck life watching your ducklings grow up to do duck things, like eat bread and terrarize children."
+		$Camera2D/Control/Victory/text.text = "Good Ending\n"
+		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark with all of your babies. You live the rest of your duck life watching your ducklings grow up to do duck things, like eat bread and terrarize children."
 	elif health != 1:
-		$Camera2D/Victory/text.text = "Neutral Ending\n"
-		$Camera2D/Victory/text.text += "You manage to escape to COUNTRY_NAME with most of your babies. Although heart-broken by the lose of your little ducklings, expecially your secret favorite, Lucile, you have to put on a brave face for your remaining ducklings."
+		$Camera2D/Control/Victory/text.text = "Neutral Ending\n"
+		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark with most of your babies. Although heart-broken by the lose of your little ducklings, expecially your secret favorite, Dave, you have to put on a brave face for your remaining ducklings."
 	else:
-		$Camera2D/Victory/text.text = "Bad Ending\n"
-		$Camera2D/Victory/text.text += "You manage to escape to COUNTRY_NAME, however your ducklings were not able to survive the trechurous journey. You fall into a great depression, forever mourning your lost ducklings. You often wonder if you were just a bit quicker, if you would have been able to save them..."
+		$Camera2D/Control/Victory/text.text = "Bad Ending\n"
+		$Camera2D/Control/Victory/text.text += "You manage to escape to Duckmark, however your ducklings were not able to survive the trechurous journey. You fall into a great depression, forever mourning your lost ducklings. You often wonder if you were just a bit quicker, if you would have been able to save them..."
 	$Camera2D.victory = true
 
 #func _on_River_body_entered(body):
