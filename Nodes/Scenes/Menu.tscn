@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/UI Scripts/move_to_scene.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/UI Scripts/exit.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Images/S_key.png" type="Texture" id=21]
 [ext_resource path="res://Fonts/Dynamic Fonts/Epic.tres" type="DynamicFont" id=22]
 [ext_resource path="res://Images/SHIFT_key.png" type="Texture" id=23]
+[ext_resource path="res://Fonts/Dynamic Fonts/Title.tres" type="DynamicFont" id=24]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -108,38 +109,38 @@ __meta__ = {
 position = Vector2( 719.956, 510 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
-frame = 4
+frame = 13
 playing = true
 
 [node name="ButtonsTutorial" type="Node" parent="."]
 
 [node name="Sprite" type="Sprite" parent="ButtonsTutorial"]
-position = Vector2( 891.751, 255.215 )
+position = Vector2( 898.211, 346.233 )
 scale = Vector2( 0.19458, 0.193676 )
 texture = ExtResource( 18 )
 
 [node name="Sprite2" type="Sprite" parent="ButtonsTutorial"]
-position = Vector2( 804.599, 99.4188 )
+position = Vector2( 888.64, 191.263 )
 scale = Vector2( 0.203636, 0.208311 )
 texture = ExtResource( 21 )
 
 [node name="Sprite3" type="Sprite" parent="ButtonsTutorial"]
-position = Vector2( 637.694, 101.693 )
+position = Vector2( 692.518, 190.061 )
 scale = Vector2( 0.217184, 0.212521 )
 texture = ExtResource( 20 )
 
 [node name="Sprite4" type="Sprite" parent="ButtonsTutorial"]
 
 [node name="Sprite5" type="Sprite" parent="ButtonsTutorial"]
-position = Vector2( 700.531, 256.25 )
+position = Vector2( 706.655, 345.958 )
 scale = Vector2( 0.609375, 0.5 )
 texture = ExtResource( 23 )
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 589.632
-margin_top = 39.0
-margin_right = 683.632
-margin_bottom = 64.0
+margin_left = 655.923
+margin_top = 116.857
+margin_right = 749.923
+margin_bottom = 141.857
 custom_fonts/normal_font = ExtResource( 22 )
 text = "GO UP"
 __meta__ = {
@@ -147,10 +148,10 @@ __meta__ = {
 }
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
-margin_left = 742.705
-margin_top = 36.0793
-margin_right = 877.705
-margin_bottom = 61.0793
+margin_left = 825.884
+margin_top = 116.857
+margin_right = 960.884
+margin_bottom = 141.857
 custom_fonts/normal_font = ExtResource( 22 )
 text = "GO DOWN"
 __meta__ = {
@@ -158,12 +159,26 @@ __meta__ = {
 }
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
-margin_left = 637.694
-margin_top = 192.25
-margin_right = 948.694
-margin_bottom = 217.25
+margin_left = 628.655
+margin_top = 268.523
+margin_right = 939.655
+margin_bottom = 293.523
 custom_fonts/normal_font = ExtResource( 22 )
 text = "MOTHER'S INTUITION"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+anchor_left = 0.000111103
+anchor_right = 0.000111103
+margin_left = 715.7
+margin_top = 25.9181
+margin_right = 996.7
+margin_bottom = 90.9181
+custom_fonts/normal_font = ExtResource( 24 )
+custom_colors/font_color_shadow = Color( 0.270588, 0.439216, 0.47451, 1 )
+text = "TITLE"
 __meta__ = {
 "_edit_use_anchors_": false
 }

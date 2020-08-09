@@ -17,6 +17,9 @@ func _physics_process(delta):
 
 func _on_BaseEnemy_body_entered(body):
 	if body.name == "Player" && !hit:
+		if "Log" in self.get_name():
+			$"Wood Crack".pitch_scale = 1 / self.scale.x + 0.2
+			$"Wood Crack".play()
 		#Makes the player take damage
 		body._take_damage()
 		hit = true
