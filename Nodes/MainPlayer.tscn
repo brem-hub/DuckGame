@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/Player Scripts/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Player Scripts/Camera2D.gd" type="Script" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://Music/Samples/Quack_cutted.wav" type="AudioStream" id=21]
 [ext_resource path="res://Music/Music/Endings/good.ogg" type="AudioStream" id=22]
 [ext_resource path="res://Music/Music/Endings/bad.ogg" type="AudioStream" id=23]
+[ext_resource path="res://Fonts/Dynamic Fonts/Epic.tres" type="DynamicFont" id=24]
+[ext_resource path="res://Fonts/Dynamic Fonts/Arcade.tres" type="DynamicFont" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -183,15 +185,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="text" type="RichTextLabel" parent="Camera2D/Control/GameOver"]
+[node name="game_over" type="RichTextLabel" parent="Camera2D/Control/GameOver"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -462.0
-margin_top = 50.0
-margin_right = 462.0
-margin_bottom = 325.0
-text = "Game Over!
-Pro Tip: Don't get hit!"
+margin_left = -91.188
+margin_top = 44.7027
+margin_right = 109.812
+margin_bottom = 77.7027
+custom_fonts/normal_font = ExtResource( 24 )
+tab_size = 1
+text = "GAME OVER!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="captions" type="RichTextLabel" parent="Camera2D/Control/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -458.878
+margin_top = 105.0
+margin_right = 483.122
+margin_bottom = 151.0
+custom_fonts/normal_font = ExtResource( 25 )
+tab_size = 1
+text = "Unfortunately, on  your  difficult  jorney  you  didn't manage  to  survive.  You  and  your  ducklings  will  never  reach  Duckland."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="advice" type="RichTextLabel" parent="Camera2D/Control/GameOver"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -461.254
+margin_top = 225.451
+margin_right = 462.746
+margin_bottom = 262.451
+custom_fonts/normal_font = ExtResource( 25 )
+tab_size = 1
+text = "Pro  tip:   "
 __meta__ = {
 "_edit_use_anchors_": false
 }

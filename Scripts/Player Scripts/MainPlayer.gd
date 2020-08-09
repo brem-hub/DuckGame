@@ -39,7 +39,7 @@ var moving_side : int
 var slow_down = false #Is time being slowed?
 var slow_down_recover = false #Ran out of slow down stamina?
 
-var game_over_text = ["Game Over\nPro Tip: ", "Don't Die", "Don't get hit", "Use the pause (shift)", "Get Good", "random_pro_tip.exe", "Read the Pro Tips", "See what you just did. Don't do that.", "WASD / Arrow Keys / D-pad / Left-Stick for movement. Press backwards to slow down time as well as Shift / A / B", "Have more children."]
+var game_over_text = ["Don't Die", "Don't get hit", "Use the pause (shift)", "Get Good", "random_pro_tip.exe", "Read the Pro Tips", "See what you just did. Don't do that.", "WASD / Arrow Keys / D-pad / Left-Stick for movement. Press backwards to slow down time as well as Shift / A / B", "Have more children."]
 
 func _ready():
 	#Runs at the start
@@ -118,8 +118,8 @@ func _take_damage():
 		$"/root/ThemeMusic".stop()
 		$"Sounds/Bad Ending".play()
 		$Camera2D/Control/GameOver.visible = true
-		$Camera2D/Control/GameOver/text.text = game_over_text[0]
-		$Camera2D/Control/GameOver/text.text += game_over_text[round(rand_range(1, game_over_text.size()-1))]
+		#$Camera2D/Control/GameOver/text.text = game_over_text[0]
+		$Camera2D/Control/GameOver/advice.text += game_over_text[round(rand_range(0, game_over_text.size()-1))]
 		$Camera2D._pause()
 
 func _victory():
