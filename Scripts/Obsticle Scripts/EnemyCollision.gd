@@ -16,7 +16,7 @@ func _physics_process(delta):
 				queue_free()
 
 func _on_BaseEnemy_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" && !hit:
 		#Makes the player take damage
 		body._take_damage()
 		hit = true

@@ -4,8 +4,9 @@
 [ext_resource path="res://Scripts/Obsticle Scripts/EnemyCollision.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Sprite.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.7871, 8.74314 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.95158
+height = 35.7387
 
 [node name="Rock" type="Area2D"]
 script = ExtResource( 2 )
@@ -16,6 +17,7 @@ texture = ExtResource( 1 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.368046, 9.60613 )
+position = Vector2( -0.486875, 11.1002 )
+rotation = 1.5708
 shape = SubResource( 1 )
 [connection signal="body_entered" from="." to="." method="_on_BaseEnemy_body_entered"]

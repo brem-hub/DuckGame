@@ -25,35 +25,36 @@
 [ext_resource path="res://Images/Pirahna/up attack/fish18.png" type="Texture" id=23]
 [ext_resource path="res://Images/Pirahna/down attack/fish7.png" type="Texture" id=24]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "down_swim",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "up_swim",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "down_attack",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "up_attack",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "down_swim",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "down_attack",
+"speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 20 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 6.03429
+height = 29.2463
 
 [node name="Piranha" type="KinematicBody2D"]
 script = ExtResource( 3 )
-min_max_y = [ -220, 220 ]
+min_max_y = [ -200, 160 ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
@@ -62,11 +63,12 @@ script = ExtResource( 2 )
 has_parent = true
 
 [node name="Sprite" type="AnimatedSprite" parent="Area2D"]
-frames = SubResource( 2 )
-animation = "down_attack"
+frames = SubResource( 1 )
+animation = "down_swim"
+frame = 2
 playing = true
 script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_BaseEnemy_body_entered"]
