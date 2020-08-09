@@ -26,7 +26,7 @@ animations = [ {
 
 [node name="Duckling" type="KinematicBody2D"]
 script = ExtResource( 2 )
-SPEED = 1
+SPEED = 2
 MAX_SPEED = 4
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
@@ -35,5 +35,5 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 2
 frames = SubResource( 1 )
 animation = "swim"
-frame = 3
+frame = 4
 playing = true

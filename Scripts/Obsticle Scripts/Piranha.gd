@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 onready var root = get_tree().get_root().get_child(1)
-onready var player = root.get_node("Player")
+#onready var player = root.get_node("Player")
+onready var player = root.get_node("YSort").get_node("Player")
 #Option to set if the pirahna roams randomly or mimics the players movement
 #Will need some sort of visual difference between them though, maybe two different enemies? or just different colorations?
 var follow_player = false

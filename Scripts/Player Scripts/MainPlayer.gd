@@ -22,8 +22,8 @@ export var camera_timer = 0.5
 #Nodes
 onready var root = get_tree().get_root().get_child(1)
 #onready var river = root.get_node("River")
-onready var duckling_controller = root.get_node("DucklingManager")
-
+#onready var duckling_controller = root.get_node("DucklingManager")
+onready var duckling_controller = root.get_node("YSort").get_node("DucklingManager")
 #If player is in the river
 #var is_in_river : bool
 

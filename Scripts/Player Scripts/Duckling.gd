@@ -6,7 +6,8 @@ export var SPEED : int
 export var MAX_SPEED : int
 
 #Nodes
-onready var mother = get_tree().get_root().get_child(1).get_node("Player")
+#onready var mother = get_tree().get_root().get_child(1).get_node("Player")
+onready var mother = get_tree().get_root().get_child(1).get_node("YSort").get_node("Player")
 #onready var river = get_tree().get_root().get_child(0).get_node("River")
 
 onready var speed = SPEED

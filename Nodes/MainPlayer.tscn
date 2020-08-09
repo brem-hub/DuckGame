@@ -47,6 +47,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "swim"
+frame = 10
 playing = true
 offset = Vector2( -18, 0 )
 script = ExtResource( 17 )
@@ -207,7 +208,8 @@ margin_right = 483.122
 margin_bottom = 151.0
 custom_fonts/normal_font = ExtResource( 25 )
 tab_size = 1
-text = "Unfortunately, on  your  difficult  jorney  you  didn't manage  to  survive.  You  and  your  ducklings  will  never  reach  Duckland."
+text = "                                       Unfortunately, on  your  difficult  jorney  you  didn't manage  to  survive. 
+                                                                  You  and  your  ducklings  will  never  reach  Duckland."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -294,7 +296,7 @@ pause_mode = 2
 
 [node name="DamageQuack" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 21 )
-volume_db = -12.0
+volume_db = -6.0
 
 [node name="Good Ending" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 22 )
