@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/duck_chatter.wav-80cfea9941ff1be7e0b458fb71556cdc.sample"
+
+[deps]
+
+source_file="res://Music/Minijam60_sounds/sfx/WAV/duck_chatter.wav"
+dest_files=[ "res://.import/duck_chatter.wav-80cfea9941ff1be7e0b458fb71556cdc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

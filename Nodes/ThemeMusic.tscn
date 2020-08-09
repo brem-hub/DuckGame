@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music/Samples/Main_Theme_cutted.wav" type="AudioStream" id=1]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+pause_mode = 2
+stream = ExtResource( 1 )
+volume_db = -15.0
+autoplay = true
+mix_target = 2

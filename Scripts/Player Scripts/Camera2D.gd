@@ -1,6 +1,6 @@
 extends Camera2D
 
-onready var root = get_tree().get_root().get_child(0)
+onready var root = get_tree().get_root().get_child(1)
 onready var player = get_parent()
 
 var distance_from_player = 400

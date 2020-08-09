@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Player Scripts/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Player Scripts/Camera2D.gd" type="Script" id=2]
@@ -19,6 +19,10 @@
 [ext_resource path="res://Scripts/AnimatedSprite.gd" type="Script" id=17]
 [ext_resource path="res://Scripts/UI Scripts/exit.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/UI Scripts/move_to_scene.gd" type="Script" id=19]
+[ext_resource path="res://Music/Samples/duck_cutted.wav" type="AudioStream" id=20]
+[ext_resource path="res://Music/Minijam60_sounds/Music/Endings/neutral.ogg" type="AudioStream" id=21]
+[ext_resource path="res://Music/Minijam60_sounds/Music/Endings/bad.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Music/Minijam60_sounds/Music/Endings/good.ogg" type="AudioStream" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -254,6 +258,25 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D/Control"]
+
+[node name="Sounds" type="Node" parent="."]
+pause_mode = 2
+
+[node name="DamageQuack" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 20 )
+volume_db = -12.0
+
+[node name="Good Ending" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 23 )
+volume_db = -10.0
+
+[node name="Neutral Ending" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 21 )
+volume_db = -12.0
+
+[node name="Bad Ending" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 22 )
+volume_db = -15.0
 [connection signal="pressed" from="Camera2D/Control/Pause/Main Menu" to="Camera2D/Control/Pause/Main Menu" method="_on_pressed"]
 [connection signal="pressed" from="Camera2D/Control/Pause/Exit" to="Camera2D/Control/Pause/Exit" method="_on_exit_pressed"]
 [connection signal="pressed" from="Camera2D/Control/GameOver/Main Menu" to="Camera2D/Control/GameOver/Main Menu" method="_on_pressed"]

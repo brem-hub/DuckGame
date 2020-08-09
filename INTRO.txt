@@ -1,0 +1,9 @@
+BUTTONS
+
+Move Up: W / UP arrow keys / UP dpad / UP left stick
+
+Move Down: S / DOWN arrow keys / DOWN dpad / DOWN  left stick
+
+Mothers Intuition: SHIFT / A / LEFT arrow / LEFT dpad / LEFT left stick / A button / B button
+
+Pause: ESC / START

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pirahna_attack.wav-ee18e36edccb365f924d67ab75b5bc1e.sample"
+
+[deps]
+
+source_file="res://Music/Minijam60_sounds/sfx/WAV/pirahna_attack.wav"
+dest_files=[ "res://.import/pirahna_attack.wav-ee18e36edccb365f924d67ab75b5bc1e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
