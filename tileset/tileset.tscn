@@ -1,17 +1,124 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Images/icon.png" type="Texture" id=1]
+[ext_resource path="res://Images/tileset.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 25, 25 )
 
 [node name="Tileset" type="Node"]
 
-[node name="wall" type="Sprite" parent="."]
-modulate = Color( 0, 0.0980392, 0, 1 )
+[node name="grass1" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 50, 50 )
 
-[node name="wall" type="StaticBody2D" parent="wall"]
+[node name="StaticBody2D" type="StaticBody2D" parent="grass1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass1/StaticBody2D"]
 shape = SubResource( 1 )
+
+[node name="grass2" type="Sprite" parent="."]
+position = Vector2( 51, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 50, 0, 50, 50 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass2/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="grass3" type="Sprite" parent="."]
+position = Vector2( 102, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 100, 0, 50, 50 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass3/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="grass4" type="Sprite" parent="."]
+position = Vector2( 0, 51 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 50, 50, 50 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass4/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="grass5" type="Sprite" parent="."]
+position = Vector2( 51, 51 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 50, 50, 50, 50 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass5/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="grass6" type="Sprite" parent="."]
+position = Vector2( 102, 51 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 100, 50, 50, 50 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass6/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="grass7" type="Sprite" parent="."]
+position = Vector2( 0, 102 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 100, 50, 50 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass7/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="grass8" type="Sprite" parent="."]
+position = Vector2( 51, 102 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 50, 100, 50, 50 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass8/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="grass9" type="Sprite" parent="."]
+position = Vector2( 102, 102 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 100, 100, 50, 50 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="grass9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass9/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="water1" type="Sprite" parent="."]
+position = Vector2( 0, 153 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 150, 50, 50 )
+
+[node name="water2" type="Sprite" parent="."]
+position = Vector2( 51, 153 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 50, 150, 50, 50 )
+
+[node name="water3" type="Sprite" parent="."]
+position = Vector2( 102, 153 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 100, 150, 50, 50 )
