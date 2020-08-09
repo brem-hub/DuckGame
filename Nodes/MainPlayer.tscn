@@ -47,7 +47,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "swim"
-frame = 12
+frame = 11
 playing = true
 offset = Vector2( -18, 0 )
 script = ExtResource( 17 )
@@ -65,9 +65,9 @@ script = ExtResource( 2 )
 
 [node name="Control" type="Control" parent="Camera2D"]
 margin_left = -512.0
-margin_top = -300.0
+margin_top = -301.682
 margin_right = 512.0
-margin_bottom = 300.0
+margin_bottom = 298.318
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -137,7 +137,6 @@ __meta__ = {
 }
 
 [node name="GameOver" type="Control" parent="Camera2D/Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -181,6 +180,8 @@ margin_left = 25.0
 margin_top = 25.0
 margin_right = -24.9999
 margin_bottom = -250.0
+grow_horizontal = 0
+grow_vertical = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -217,13 +218,16 @@ __meta__ = {
 [node name="advice" type="RichTextLabel" parent="Camera2D/Control/GameOver"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -461.254
-margin_top = 225.451
-margin_right = 462.746
-margin_bottom = 262.451
+margin_left = -189.596
+margin_top = 221.622
+margin_right = 222.404
+margin_bottom = 323.622
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 custom_fonts/normal_font = ExtResource( 25 )
-tab_size = 1
-text = "Pro  tip:   "
+tab_size = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

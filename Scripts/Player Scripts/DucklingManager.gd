@@ -11,7 +11,7 @@ export var OFFSET_BETWEEN_DUCK : int
 #		and don`t spawn in the same spot
 export var BEGINING_OFFSET : int
 #Nodes
-onready var root = get_tree().get_root().get_child(1)
+onready var root = get_tree().get_root().get_child(2)
 onready var mother = root.get_node("YSort").get_node("Player")
 #onready var mother = root.get_node("Player")
 #onready var river = root.get_node("River")

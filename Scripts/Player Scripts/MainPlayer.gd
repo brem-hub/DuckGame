@@ -20,7 +20,7 @@ export var camera_shake_multiplier = 5
 export var camera_timer = 0.5
 
 #Nodes
-onready var root = get_tree().get_root().get_child(1)
+onready var root = get_tree().get_root().get_child(2)
 #onready var river = root.get_node("River")
 #onready var duckling_controller = root.get_node("DucklingManager")
 onready var duckling_controller = root.get_node("YSort").get_node("DucklingManager")
@@ -39,7 +39,10 @@ var moving_side : int
 var slow_down = false #Is time being slowed?
 var slow_down_recover = false #Ran out of slow down stamina?
 
-var game_over_text = ["Don't Die", "Don't get hit", "Use the pause (shift)", "Get Good", "random_pro_tip.exe", "Read the Pro Tips", "See what you just did. Don't do that.", "WASD / Arrow Keys / D-pad / Left-Stick for movement. Press backwards to slow down time as well as Shift / A / B", "Have more children."]
+var game_over_text = ["Don't  Die", "Don't  get  hit", "Use  the  pause  (shift)", "Get good",
+ "You  have  almost  done  it", "Read  the  Pro  Tips", "See  what  you  just  did  Don't  do  that  again.",
+ "Sorry  Dave  you  will  not  see  the  Duckland.", "Poor mother.", "At  least  the  piranhas  are  not  hungry.",
+ "Dont  worry  your  children  can  dodge."]
 
 func _ready():
 	#Runs at the start

@@ -22,6 +22,7 @@ config/icon="res://Images/icon.png"
 [autoload]
 
 ThemeMusic="*res://Nodes/ThemeMusic.tscn"
+WaterSound="*res://Nodes/WaterSound.tscn"
 
 [importer_defaults]
 
