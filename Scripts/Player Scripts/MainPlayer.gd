@@ -53,6 +53,11 @@ func _ready():
 	$Camera2D/Control/Stamina.max_value = SLOW_DOWN_STAMINA_MAX
 
 func _physics_process(delta):
+	$Camera2D/Control/Distance.value = position.x
+	if !$invframes.is_stopped() && modulate.a == 1:
+		if rand_range(0, 1) > 0.5:	modulate.a = 0
+	elif modulate.a == 0:
+		if rand_range(0, 1) > 0.5:	modulate.a = 1
 	#Slow Down
 	if Input.is_action_pressed("slow_down") && !slow_down_recover && slow_down_stamina != 0:
 		slow_down = true
@@ -99,6 +104,8 @@ func _physics_process(delta):
 #		move_and_slide(Vector2.RIGHT * river.PUSH_POWER)
 
 func _take_damage():
+	if !$invframes.is_stopped():	return
+	$invframes.start()
 	#Code to run when taking damage
 	health -= 1
 	#Remove a duckling

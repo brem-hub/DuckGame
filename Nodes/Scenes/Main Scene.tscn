@@ -55,7 +55,7 @@ position = Vector2( 1133.52, 49.7475 )
 position = Vector2( 1466.72, -102.573 )
 
 [node name="Rock3" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 1581.5, 140.983 )
+position = Vector2( 1621.17, 156.848 )
 scale = Vector2( 0.88, 0.88 )
 
 [node name="Rock4" parent="Obsticles" instance=ExtResource( 7 )]
@@ -88,7 +88,7 @@ position = Vector2( 2435.03, 110.03 )
 scale = Vector2( 1.84, 1.84 )
 
 [node name="Log4" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 2335.09, -193.471 )
+position = Vector2( 2335.09, -207.751 )
 
 [node name="Rock10" parent="Obsticles" instance=ExtResource( 7 )]
 position = Vector2( 2362.85, -145.355 )
@@ -109,7 +109,7 @@ position = Vector2( 2536.86, -72.0646 )
 scale = Vector2( 0.72, 0.72 )
 
 [node name="Log7" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 2658.58, 107.136 )
+position = Vector2( 2693.66, 157.24 )
 scale = Vector2( 1.4, 1.4 )
 
 [node name="Rock13" parent="Obsticles" instance=ExtResource( 7 )]
@@ -154,11 +154,11 @@ rotation = 0.157228
 scale = Vector2( 2.00019, 2.00019 )
 
 [node name="Rock18" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 3318.81, -149.74 )
+position = Vector2( 3337.85, -217.968 )
 scale = Vector2( 2.28, 2.28 )
 
 [node name="Rock19" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 3437.89, -14.0795 )
+position = Vector2( 3499.77, -36.295 )
 scale = Vector2( 1.32, 1.32 )
 
 [node name="Rock20" parent="Obsticles" instance=ExtResource( 7 )]
@@ -166,11 +166,11 @@ position = Vector2( 3336.9, 85.4048 )
 scale = Vector2( 1.57142, 1.57142 )
 
 [node name="Log12" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 3478.59, -95.4757 )
+position = Vector2( 3494.46, -131.97 )
 scale = Vector2( 4.19334, 3.45334 )
 
 [node name="Log13" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 3566.02, 114.044 )
+position = Vector2( 3610.45, 152.123 )
 scale = Vector2( 1.76, 1.76 )
 
 [node name="Piranha5" parent="Obsticles" instance=ExtResource( 5 )]
@@ -209,7 +209,7 @@ position = Vector2( 4075.63, 23.7965 )
 scale = Vector2( 1.33783, 1.33783 )
 
 [node name="Piranha11" parent="Obsticles" instance=ExtResource( 5 )]
-position = Vector2( 4134.39, 124.069 )
+position = Vector2( 4145.02, 79.9513 )
 scale = Vector2( 1.4, 1.4 )
 
 [node name="Piranha12" parent="Obsticles" instance=ExtResource( 5 )]
@@ -374,7 +374,7 @@ scale = Vector2( 0.791798, 0.791798 )
 position = Vector2( 17089.7, -33.7033 )
 
 [node name="Rock137" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 16817.6, 106.64 )
+position = Vector2( 16858.6, 128.223 )
 scale = Vector2( 2.70666, 2.70666 )
 
 [node name="Log53" parent="Obsticles" instance=ExtResource( 6 )]
@@ -383,7 +383,7 @@ rotation = 0.321034
 scale = Vector2( 1.58916, 1.58916 )
 
 [node name="Log48" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 16985.2, 119.522 )
+position = Vector2( 16955, 33.1843 )
 rotation = -0.0964754
 
 [node name="Rock136" parent="Obsticles" instance=ExtResource( 7 )]
@@ -473,8 +473,142 @@ min_max_y = [ -100, 80 ]
 position = Vector2( 6417.84, -109.663 )
 scale = Vector2( 1.4306, 1.42657 )
 
+[node name="Rock188" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 19946.9, 6.40569 )
+scale = Vector2( 1.19573, 1.19573 )
+
+[node name="Rock187" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 19896, -177.228 )
+scale = Vector2( 0.80001, 0.80001 )
+
+[node name="Rock186" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 20013.4, -115.294 )
+scale = Vector2( 1.56001, 1.56001 )
+
+[node name="Rock185" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 19771.7, 132.589 )
+scale = Vector2( 2.39999, 2.39999 )
+
+[node name="Piranha39" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 20625.3, -139.633 )
+
+[node name="Rock184" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 20499.5, 63.9501 )
+scale = Vector2( 1.35999, 1.35999 )
+
+[node name="Rock183" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 20924.5, -135.347 )
+scale = Vector2( 1.47049, 1.47049 )
+
+[node name="Rock182" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 20887.3, 109.522 )
+scale = Vector2( 0.791798, 0.791798 )
+
+[node name="Piranha38" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 20811.4, -36.5374 )
+
+[node name="Rock181" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 20346.5, -134.051 )
+scale = Vector2( 2.70666, 2.70666 )
+
+[node name="Log62" parent="Obsticles" instance=ExtResource( 6 )]
+position = Vector2( 20736.9, -195.484 )
+rotation = 0.321034
+scale = Vector2( 1.58916, 1.58916 )
+
+[node name="Log61" parent="Obsticles" instance=ExtResource( 6 )]
+position = Vector2( 20706.9, 116.688 )
+rotation = -0.0964754
+
+[node name="Rock180" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21219.9, -218.102 )
+scale = Vector2( 1.76, 1.76 )
+
+[node name="Rock179" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 22298.8, -14.9154 )
+scale = Vector2( 0.84, 0.84 )
+
+[node name="Rock178" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21531.3, 122.368 )
+scale = Vector2( 2.12, 2.12 )
+
+[node name="Rock177" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21225.7, -86.3608 )
+scale = Vector2( 1.60001, 1.60001 )
+
+[node name="Rock176" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21190.6, -131.668 )
+scale = Vector2( 1.19573, 1.19573 )
+
+[node name="Rock175" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21245.7, 11.013 )
+scale = Vector2( 0.80001, 0.80001 )
+
+[node name="Rock174" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21192.7, 52.5422 )
+scale = Vector2( 1.56001, 1.56001 )
+
+[node name="Rock173" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21764.6, -120.234 )
+scale = Vector2( 1.76, 1.76 )
+
+[node name="Rock172" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21800.4, -77.2757 )
+scale = Vector2( 0.84, 0.84 )
+
+[node name="Rock171" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 22114.6, -158.158 )
+scale = Vector2( 2.12, 2.12 )
+
+[node name="Rock170" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21809, -18.0307 )
+scale = Vector2( 1.60001, 1.60001 )
+
+[node name="Rock169" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21830.5, 53.0325 )
+scale = Vector2( 1.19573, 1.19573 )
+
+[node name="Rock168" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21890.4, 79.3405 )
+scale = Vector2( 0.80001, 0.80001 )
+
+[node name="Rock167" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 21944.3, 129.019 )
+scale = Vector2( 1.56001, 1.56001 )
+
+[node name="Rock166" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 22323.7, 99.2566 )
+scale = Vector2( 2.39999, 2.39999 )
+
+[node name="Rock165" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 19451.6, -14.2342 )
+
+[node name="Rock164" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 19211.8, 123.421 )
+scale = Vector2( 0.80001, 0.80001 )
+
+[node name="Rock163" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 19620.6, -190.793 )
+scale = Vector2( 1.52, 1.52 )
+
+[node name="Rock162" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 19592.7, -105.486 )
+scale = Vector2( 2.68, 2.68 )
+
+[node name="Rock68" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 19701.7, -154.883 )
+scale = Vector2( 1.09996, 1.09996 )
+
+[node name="Piranha19" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 20168.5, -20.2931 )
+min_max_y = [ -100, 80 ]
+
+[node name="Rock161" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 20110.4, 97.8483 )
+scale = Vector2( 1.4306, 1.42657 )
+
 [node name="Rock103" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 6691.82, 67.0457 )
+position = Vector2( 6506.81, 121.714 )
 scale = Vector2( 2.2, 2.2 )
 
 [node name="Rock102" parent="Obsticles" instance=ExtResource( 7 )]
@@ -482,7 +616,7 @@ position = Vector2( 7202.59, 102.19 )
 scale = Vector2( 2.2, 2.2 )
 
 [node name="Piranha32" parent="Obsticles" instance=ExtResource( 5 )]
-position = Vector2( 8315.09, -94.5048 )
+position = Vector2( 8357.14, -94.5063 )
 rotation = -0.230383
 scale = Vector2( 2, 2 )
 min_max_y = [ -150, 100 ]
@@ -493,10 +627,10 @@ rotation = -0.230383
 scale = Vector2( 5, 5 )
 
 [node name="Log45" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 6602.74, -81.1396 )
+position = Vector2( 6728.89, -1.25397 )
 
 [node name="Log44" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 6952.5, -105.21 )
+position = Vector2( 6910.45, -101.004 )
 rotation = 0.394682
 scale = Vector2( 6.4246, 6.4246 )
 
@@ -614,15 +748,15 @@ position = Vector2( 9591.84, -33.5521 )
 scale = Vector2( 1.32, 1.32 )
 
 [node name="Rock84" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 9490.85, 65.9322 )
+position = Vector2( 9524.32, 85.4576 )
 scale = Vector2( 1.57142, 1.57142 )
 
 [node name="Log34" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 9632.54, -114.994 )
+position = Vector2( 9674.38, -112.206 )
 scale = Vector2( 4.19334, 3.45334 )
 
 [node name="Log33" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 9719.97, 94.5714 )
+position = Vector2( 9625.13, 75.0481 )
 scale = Vector2( 1.76, 1.76 )
 
 [node name="Piranha28" parent="Obsticles" instance=ExtResource( 5 )]
@@ -636,16 +770,16 @@ rotation = 0.379311
 scale = Vector2( 2.48, 2.48 )
 
 [node name="Rock83" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 8213.49, -1.98354 )
+position = Vector2( 8192.47, 90.5214 )
 scale = Vector2( 3.48, 3.48 )
 
 [node name="Log31" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 9862.95, -72.4035 )
+position = Vector2( 9802.99, 2.99304 )
 rotation = -3.07178
 scale = Vector2( 4.061, -4.061 )
 
 [node name="Piranha25" parent="Obsticles" instance=ExtResource( 5 )]
-position = Vector2( 10036.2, 77.5925 )
+position = Vector2( 10064.1, -8.88311 )
 scale = Vector2( 1.43999, 1.83999 )
 
 [node name="Piranha23" parent="Obsticles" instance=ExtResource( 5 )]
@@ -734,19 +868,19 @@ position = Vector2( 11321.2, 103.688 )
 rotation = -0.0964754
 
 [node name="Rock117" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 14692.5, -55.906 )
+position = Vector2( 14999, 112.444 )
 scale = Vector2( 1.32, 1.32 )
 
 [node name="Rock116" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 14591.5, 43.5783 )
+position = Vector2( 15206.7, -14.7217 )
 scale = Vector2( 1.57142, 1.57142 )
 
 [node name="Log57" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 14733.2, -137.386 )
+position = Vector2( 14685.7, 121.632 )
 scale = Vector2( 4.19334, 3.45334 )
 
 [node name="Log56" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 14820.7, 72.2175 )
+position = Vector2( 15008.5, -122.051 )
 scale = Vector2( 1.76, 1.76 )
 
 [node name="Piranha37" parent="Obsticles" instance=ExtResource( 5 )]
@@ -764,16 +898,16 @@ position = Vector2( 13367.5, -36.6426 )
 scale = Vector2( 3.48, 3.48 )
 
 [node name="Log54" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 14963.6, -94.4035 )
+position = Vector2( 14590.2, -169.963 )
 rotation = -3.07178
 scale = Vector2( 4.061, -4.061 )
 
 [node name="Piranha36" parent="Obsticles" instance=ExtResource( 5 )]
-position = Vector2( 15136.9, 55.2771 )
+position = Vector2( 14880, 22.9071 )
 scale = Vector2( 1.43999, 1.83999 )
 
 [node name="Piranha35" parent="Obsticles" instance=ExtResource( 5 )]
-position = Vector2( 15256.6, -119.332 )
+position = Vector2( 15122.8, -54.5733 )
 scale = Vector2( 0.84, 0.84 )
 
 [node name="Piranha33" parent="Obsticles" instance=ExtResource( 5 )]
@@ -788,7 +922,7 @@ position = Vector2( 15580.8, -183.678 )
 scale = Vector2( 4.793, 4.793 )
 
 [node name="Log52" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 15590.8, 101.547 )
+position = Vector2( 15627.5, 138.24 )
 rotation = -0.258804
 scale = Vector2( 2.86474, 2.86474 )
 
@@ -849,16 +983,12 @@ position = Vector2( 11750.1, -56.4658 )
 scale = Vector2( 0.84, 0.84 )
 
 [node name="Rock70" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 11674.8, -4.84105 )
+position = Vector2( 11669.2, -29.9464 )
 scale = Vector2( 2.12, 2.12 )
 
 [node name="Rock69" parent="Obsticles" instance=ExtResource( 7 )]
 position = Vector2( 11749.9, 14.7361 )
 scale = Vector2( 1.60001, 1.60001 )
-
-[node name="Rock68" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 11704.7, 80.6794 )
-scale = Vector2( 1.19573, 1.19573 )
 
 [node name="Rock67" parent="Obsticles" instance=ExtResource( 7 )]
 position = Vector2( 11752.4, 117.384 )
@@ -944,7 +1074,7 @@ position = Vector2( 18402.4, 106.841 )
 scale = Vector2( 0.80001, 0.80001 )
 
 [node name="Rock154" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 18310.7, 132.549 )
+position = Vector2( 18340.9, 141.182 )
 scale = Vector2( 1.56001, 1.56001 )
 
 [node name="Rock153" parent="Obsticles" instance=ExtResource( 7 )]
@@ -972,7 +1102,7 @@ position = Vector2( 18952.9, 88.5005 )
 scale = Vector2( 0.80001, 0.80001 )
 
 [node name="Rock147" parent="Obsticles" instance=ExtResource( 7 )]
-position = Vector2( 19038.2, 77.7567 )
+position = Vector2( 19053.3, 75.5977 )
 scale = Vector2( 1.56001, 1.56001 )
 
 [node name="Rock146" parent="Obsticles" instance=ExtResource( 7 )]
@@ -980,7 +1110,7 @@ position = Vector2( 19350.2, -108.526 )
 scale = Vector2( 1.84557, 1.84557 )
 
 [node name="Log58" parent="Obsticles" instance=ExtResource( 6 )]
-position = Vector2( 18351.1, -43.5136 )
+position = Vector2( 18348.9, -26.2458 )
 scale = Vector2( 1.32, 1.32 )
 
 [node name="Log59" parent="Obsticles" instance=ExtResource( 6 )]
@@ -1044,18 +1174,63 @@ scale = Vector2( 5.44, 5.44 )
 position = Vector2( 12467.4, -35.3276 )
 min_max_y = [ -100, 80 ]
 
+[node name="Piranha8" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 22800, -54.5766 )
+rotation = -3.46853e-05
+scale = Vector2( 2.92, 2.92 )
+min_max_y = [ -150, 100 ]
+
+[node name="Piranha24" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 23004, -174.943 )
+rotation = -3.46853e-05
+scale = Vector2( 1.54418, 1.54418 )
+min_max_y = [ -190, 140 ]
+
+[node name="Piranha45" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 23236.8, 79.0283 )
+rotation = -3.46853e-05
+scale = Vector2( 1.54418, 1.54418 )
+min_max_y = [ -190, 140 ]
+
+[node name="Piranha40" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 23091.4, -45.6254 )
+rotation = -3.46853e-05
+
+[node name="Piranha41" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 23443.8, -137.601 )
+rotation = -3.46853e-05
+
+[node name="Piranha46" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 23578.2, -1.90826 )
+rotation = -3.46853e-05
+
+[node name="Piranha42" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 23827.3, -141.179 )
+rotation = -3.46853e-05
+
+[node name="Piranha43" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 24173.2, 80.7889 )
+rotation = -3.46853e-05
+
+[node name="Piranha44" parent="Obsticles" instance=ExtResource( 5 )]
+position = Vector2( 24441.6, -141.2 )
+rotation = -3.46853e-05
+
+[node name="Rock189" parent="Obsticles" instance=ExtResource( 7 )]
+position = Vector2( 23985.5, -59.3901 )
+scale = Vector2( 2.35996, 2.35996 )
+
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1.85059, -1.85062 )
 MOVE_SPEED_X = 200
 MOVE_SPEED_Y = 200
 MAX_SPEED = 500
 INC_SPEED = 5
-MAX_HEALTH = 5
+MAX_HEALTH = 1
 SLOW_DOWN_STAMINA_MAX = 100
-SLOW_DOWN_STAMINA_USE = 20
-SLOW_DOWN_STAMINA_RECOVER = 30
+SLOW_DOWN_STAMINA_USE = 50
+SLOW_DOWN_STAMINA_RECOVER = 75
 camera_distance_from_player = 200
 
 [node name="DucklingManager" type="Node" parent="."]
@@ -1074,3 +1249,4 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Victory"]
 shape = SubResource( 1 )
+[connection signal="body_entered" from="Victory" to="Victory" method="_on_Victory_body_entered"]
