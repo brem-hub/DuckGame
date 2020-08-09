@@ -47,7 +47,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "swim"
-frame = 11
+frame = 9
 playing = true
 offset = Vector2( -18, 0 )
 script = ExtResource( 17 )
@@ -137,6 +137,7 @@ __meta__ = {
 }
 
 [node name="GameOver" type="Control" parent="Camera2D/Control"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
