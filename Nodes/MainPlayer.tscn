@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/Player Scripts/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Player Scripts/Camera2D.gd" type="Script" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Music/Music/Endings/bad.ogg" type="AudioStream" id=23]
 [ext_resource path="res://Fonts/Dynamic Fonts/Epic.tres" type="DynamicFont" id=24]
 [ext_resource path="res://Fonts/Dynamic Fonts/Arcade.tres" type="DynamicFont" id=25]
+[ext_resource path="res://Fonts/Dynamic Fonts/Title.tres" type="DynamicFont" id=26]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -47,7 +48,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "swim"
-frame = 6
+frame = 4
 playing = true
 offset = Vector2( -18, 0 )
 script = ExtResource( 17 )
@@ -74,8 +75,10 @@ __meta__ = {
 
 [node name="Stamina" type="ProgressBar" parent="Camera2D/Control"]
 modulate = Color( 0, 1, 0, 0.784314 )
-anchor_left = 0.5
-anchor_right = 0.5
+anchor_left = 0.499436
+anchor_top = 0.0186975
+anchor_right = 0.499436
+anchor_bottom = 0.0186975
 margin_left = -394.5
 margin_top = 550.0
 margin_right = 394.5
@@ -85,8 +88,10 @@ __meta__ = {
 }
 
 [node name="Distance" type="ProgressBar" parent="Camera2D/Control"]
-anchor_left = 0.5
-anchor_right = 0.5
+anchor_left = 0.502765
+anchor_top = -0.0346088
+anchor_right = 0.502765
+anchor_bottom = -0.0346088
 margin_left = -394.5
 margin_top = 525.0
 margin_right = 394.5
@@ -110,11 +115,13 @@ __meta__ = {
 [node name="Main Menu" type="Button" parent="Camera2D/Control/Pause"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 25.0
-margin_top = -225.0
-margin_right = 425.0
-margin_bottom = -25.0
+margin_left = 60.3632
+margin_top = -305.262
+margin_right = 460.363
+margin_bottom = -105.262
+custom_fonts/font = ExtResource( 26 )
 text = "Main Menu"
+flat = true
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -126,11 +133,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -425.0
-margin_top = -225.0
-margin_right = -25.0
-margin_bottom = -25.0004
+margin_left = -418.643
+margin_top = -303.4
+margin_right = -18.6433
+margin_bottom = -103.401
+custom_fonts/font = ExtResource( 26 )
 text = "Exit"
+flat = true
 script = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -147,11 +156,13 @@ __meta__ = {
 [node name="Main Menu" type="Button" parent="Camera2D/Control/GameOver"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 25.0
-margin_top = -225.0
-margin_right = 425.0
-margin_bottom = -25.0
+margin_left = 58.909
+margin_top = -305.092
+margin_right = 458.909
+margin_bottom = -105.092
+custom_fonts/font = ExtResource( 26 )
 text = "Main Menu"
+flat = true
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -163,11 +174,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -425.0
-margin_top = -225.0
-margin_right = -25.0
-margin_bottom = -25.0004
+margin_left = -419.401
+margin_top = -302.877
+margin_right = -19.4005
+margin_bottom = -102.878
+custom_fonts/font = ExtResource( 26 )
 text = "Exit"
+flat = true
 script = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -219,10 +232,10 @@ __meta__ = {
 [node name="advice" type="RichTextLabel" parent="Camera2D/Control/GameOver"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -189.596
-margin_top = 221.622
-margin_right = 222.404
-margin_bottom = 323.622
+margin_left = -237.498
+margin_top = 176.492
+margin_right = 210.502
+margin_bottom = 257.492
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -248,7 +261,9 @@ margin_left = 25.0
 margin_top = -225.0
 margin_right = 425.0
 margin_bottom = -25.0
+custom_fonts/font = ExtResource( 26 )
 text = "Main Menu"
+flat = true
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -260,11 +275,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -425.0
+margin_left = -423.74
 margin_top = -225.0
-margin_right = -25.0
+margin_right = -23.7401
 margin_bottom = -25.0004
+custom_fonts/font = ExtResource( 26 )
 text = "Exit"
+flat = true
 script = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -308,6 +325,28 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D/Control"]
+
+[node name="Label" type="Label" parent="Camera2D/Control"]
+margin_left = 456.619
+margin_top = 477.664
+margin_right = 564.619
+margin_bottom = 498.664
+custom_fonts/font = ExtResource( 25 )
+text = "passed   way"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Camera2D/Control"]
+margin_left = 472.894
+margin_top = 535.407
+margin_right = 580.894
+margin_bottom = 556.407
+custom_fonts/font = ExtResource( 25 )
+text = "stamina"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sounds" type="Node" parent="."]
 pause_mode = 2

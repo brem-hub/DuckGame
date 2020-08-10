@@ -87,7 +87,9 @@ margin_left = 14.0
 margin_top = 25.5592
 margin_right = 77.0
 margin_bottom = 86.5592
+custom_fonts/font = ExtResource( 4 )
 text = "Back"
+flat = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

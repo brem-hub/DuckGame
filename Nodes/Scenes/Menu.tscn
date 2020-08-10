@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/UI Scripts/move_to_scene.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/UI Scripts/exit.gd" type="Script" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Fonts/Dynamic Fonts/Epic.tres" type="DynamicFont" id=22]
 [ext_resource path="res://Images/SHIFT_key.png" type="Texture" id=23]
 [ext_resource path="res://Fonts/Dynamic Fonts/Title.tres" type="DynamicFont" id=24]
+[ext_resource path="res://Fonts/Dynamic Fonts/Credits.tres" type="DynamicFont" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -51,7 +52,9 @@ margin_left = 373.0
 margin_top = 453.0
 margin_right = 485.0
 margin_bottom = 547.0
+custom_fonts/font = ExtResource( 25 )
 text = "Credits"
+flat = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -62,11 +65,13 @@ scene_path = "res://Nodes/Scenes/Credits.tscn"
 anchor_left = 0.000921756
 anchor_right = 1.023
 anchor_bottom = 0.992
-margin_left = 35.8756
+margin_left = 50.2142
 margin_top = 453.351
-margin_right = -883.733
+margin_right = -897.394
 margin_bottom = -47.8488
+custom_fonts/font = ExtResource( 25 )
 text = "Play"
+flat = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -80,7 +85,9 @@ margin_left = 224.087
 margin_top = 453.351
 margin_right = -727.585
 margin_bottom = -50.6488
+custom_fonts/font = ExtResource( 25 )
 text = "Exit"
+flat = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -110,7 +117,7 @@ __meta__ = {
 position = Vector2( 719.956, 510 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
-frame = 2
+frame = 10
 playing = true
 
 [node name="ButtonsTutorial" type="Node" parent="."]
