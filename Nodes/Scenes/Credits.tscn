@@ -30,9 +30,9 @@ __meta__ = {
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 533.253
+margin_left = 476.108
 margin_top = 180.0
-margin_right = 1097.25
+margin_right = 1040.11
 margin_bottom = 349.0
 focus_mode = 2
 custom_fonts/normal_font = ExtResource( 4 )
@@ -40,16 +40,16 @@ text = "	ART DESIGNER:
 		
 		 Quill-
 	
-		Quill#6099"
+ https://quillington.itch.io"
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
-margin_left = 14.0
+margin_left = -51.4064
 margin_top = 368.0
-margin_right = 933.0
+margin_right = 790.594
 margin_bottom = 575.0
 focus_mode = 2
 custom_fonts/normal_font = ExtResource( 4 )
@@ -66,9 +66,9 @@ __meta__ = {
 }
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
-margin_left = -54.0
+margin_left = -65.892
 margin_top = 180.0
-margin_right = 747.0
+margin_right = 476.108
 margin_bottom = 349.0
 focus_mode = 2
 custom_fonts/normal_font = ExtResource( 4 )

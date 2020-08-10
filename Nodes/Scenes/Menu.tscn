@@ -89,19 +89,19 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.022
 anchor_bottom = 0.992
-margin_left = 21.0
-margin_top = 79.0
-margin_right = -424.528
-margin_bottom = -142.2
+margin_left = 17.0
+margin_top = 91.0
+margin_right = -428.528
+margin_bottom = -170.2
 custom_fonts/normal_font = ExtResource( 17 )
-text = "You   are   a   mother   of   four
- 	Quakers    Waddles     Puddles    and   Dave.
+text = "You  are  the  mother  of  four
+	 Quakers  Waddles   Puddles  and  Dave.
+ 
+Your  home  country  has  a  poultry  shortage  and  people  are  demanding  nuggets. They  begin  to  look  for  a  new  source  for  their  nug-diction  and  after   enough  hungry  stares  of  the  nugget  deprived  you  decide  to  flee  to  Duckmark. 
 
-In   your   home   country  there   is   a   shortage   of   poultry   and   the  people  demmand  nuggets  Looking  for  a  new  source  for  their  nug-diction  you  start  to  fear  for  your  ducklings  lives
+However  you  are  a  duck  which  are  famously  not   issued  passports  and  must  migrate  illegally  through  treacherous  waters   
 
-Eventually,  you  decide  after  enough  hungry  stares  of  the  nugget  deprived , that  you  are  going  to  flee  to  Duckmark  -  the  Duck  paradaise  However,  being  a  duck,  you  were  not  issued  a  passport ( ducks   famously  are  not  given  passports  and  therefore  you  must  migrate  illegially  across  a  trechurous  river.
-
-You  can  only  hope  that  all  of  your  ducklings  make  it   accross  safely."
+All  you  can  do  is  hope  that  all  your  ducklings  make  it  across  safely."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -110,37 +110,37 @@ __meta__ = {
 position = Vector2( 719.956, 510 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="ButtonsTutorial" type="Node" parent="."]
 
 [node name="Sprite" type="Sprite" parent="ButtonsTutorial"]
-position = Vector2( 898.211, 346.233 )
+position = Vector2( 924.48, 340 )
 scale = Vector2( 0.19458, 0.193676 )
 texture = ExtResource( 18 )
 
 [node name="Sprite2" type="Sprite" parent="ButtonsTutorial"]
-position = Vector2( 888.64, 191.263 )
+position = Vector2( 890.818, 190 )
 scale = Vector2( 0.203636, 0.208311 )
 texture = ExtResource( 21 )
 
 [node name="Sprite3" type="Sprite" parent="ButtonsTutorial"]
-position = Vector2( 692.518, 190.061 )
+position = Vector2( 737.923, 190 )
 scale = Vector2( 0.217184, 0.212521 )
 texture = ExtResource( 20 )
 
 [node name="Sprite4" type="Sprite" parent="ButtonsTutorial"]
 
 [node name="Sprite5" type="Sprite" parent="ButtonsTutorial"]
-position = Vector2( 706.655, 345.958 )
+position = Vector2( 729.114, 340 )
 scale = Vector2( 0.609375, 0.5 )
 texture = ExtResource( 23 )
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 655.923
+margin_left = 690.668
 margin_top = 116.857
-margin_right = 749.923
+margin_right = 784.668
 margin_bottom = 141.857
 custom_fonts/normal_font = ExtResource( 22 )
 text = "GO UP"
@@ -160,9 +160,9 @@ __meta__ = {
 }
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
-margin_left = 628.655
+margin_left = 655.923
 margin_top = 268.523
-margin_right = 939.655
+margin_right = 966.923
 margin_bottom = 293.523
 custom_fonts/normal_font = ExtResource( 22 )
 text = "MOTHER'S INTUITION"
