@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Images/Duckling/duckling5.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player Scripts/Duckling.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Images/Duckling/duckling4.png" type="Texture" id=7]
 [ext_resource path="res://Images/Duckling/duckling6.png" type="Texture" id=8]
 [ext_resource path="res://Images/Duckling/duckling2.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/AnimatedSprite.gd" type="Script" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -20,11 +21,13 @@ animations = [ {
 
 [node name="Duckling" type="KinematicBody2D"]
 script = ExtResource( 2 )
-SPEED = 2
-MAX_SPEED = 4
+SPEED = 3
+MAX_SPEED = 10
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 z_index = 2
 frames = SubResource( 1 )
 animation = "swim"
+frame = 1
 playing = true
+script = ExtResource( 10 )

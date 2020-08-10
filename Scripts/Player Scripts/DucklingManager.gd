@@ -50,10 +50,11 @@ func _ready():
 	
 #Each duckling gets it`s own path. The first one follows the Duck, the others each other.
 func _physics_process(delta):
-	
 	#Process the first duckling that follows the Duck
 	if ducklings.empty():
 		return
+	print(ducklings[0].global_position.distance_to(mother.global_position))
+	
 	var new_path = nav2d.get_simple_path(ducklings[0].global_position, Vector2(mother.global_position.x - OFFSET_BETWEEN_DUCK, mother.global_position.y))
 	ducklings[0].path = new_path
 	

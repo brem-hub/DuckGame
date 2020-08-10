@@ -90,7 +90,7 @@ func _physics_process(delta):
 #		else:
 #			move_speed_y = MOVE_SPEED_Y	
 	var move_vec = Vector2(1, 0)
-	
+	#print(move_speed_x)
 	if slow_down:
 		move_vec.x /= SLOW_DOWN_MULTIPLIER
 	

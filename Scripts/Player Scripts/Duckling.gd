@@ -16,8 +16,9 @@ onready var speed = SPEED
 var path  : = PoolVector2Array() setget set_path
 
 func _physics_process(delta):
+	#print(speed)
 	#Speed up/Slow down if the Duck is in the river
-	speed = move_toward(speed, MAX_SPEED, mother.INC_SPEED)
+	speed = move_toward(speed, MAX_SPEED, (mother.INC_SPEED * delta / 6.5)/mother.SLOW_DOWN_MULTIPLIER)
 #	if mother.is_in_river:
 #		if speed < MAX_SPEED:
 #			speed += river.INC_SPEED

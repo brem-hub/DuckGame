@@ -36,9 +36,11 @@ margin_right = 1097.25
 margin_bottom = 349.0
 focus_mode = 2
 custom_fonts/normal_font = ExtResource( 4 )
-text = "	ART DESAGNER:
+text = "	ART DESIGNER:
 		
-		 Quill"
+		 Quill-
+	
+		Quill#6099"
 selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -70,7 +72,7 @@ margin_right = 747.0
 margin_bottom = 349.0
 focus_mode = 2
 custom_fonts/normal_font = ExtResource( 4 )
-text = "	   SOUND DESAGNER:
+text = "	   SOUND DESIGNER:
 		
 		 Taniel Kuntu -
 		

@@ -24,6 +24,7 @@ extents = Vector2( 50, 400 )
 navpoly = SubResource( 2 )
 
 [node name="YSort" type="YSort" parent="."]
+sort_enabled = false
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 MOVE_SPEED_X = 200
@@ -34,13 +35,13 @@ MAX_HEALTH = 5
 SLOW_DOWN_STAMINA_MAX = 100
 SLOW_DOWN_STAMINA_USE = 50
 SLOW_DOWN_STAMINA_RECOVER = 75
-camera_distance_from_player = 200
+camera_distance_from_player = 150
 
 [node name="DucklingManager" type="Node" parent="YSort"]
 script = ExtResource( 1 )
 OFFSET_BETWEEN_DUCKLINGS = 10
 OFFSET_BETWEEN_DUCK = 20
-BEGINING_OFFSET = 300
+BEGINING_OFFSET = 250
 
 [node name="Obsticles" type="Node2D" parent="YSort"]
 position = Vector2( -49.1868, 20.6267 )

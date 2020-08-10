@@ -89,10 +89,10 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.022
 anchor_bottom = 0.992
-margin_left = 14.5304
-margin_top = 14.0
-margin_right = -430.998
-margin_bottom = -185.2
+margin_left = 21.0
+margin_top = 79.0
+margin_right = -424.528
+margin_bottom = -142.2
 custom_fonts/normal_font = ExtResource( 17 )
 text = "You   are   a   mother   of   four
  	Quakers    Waddles     Puddles    and   Dave.
@@ -110,7 +110,7 @@ __meta__ = {
 position = Vector2( 719.956, 510 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 1 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="ButtonsTutorial" type="Node" parent="."]
@@ -173,13 +173,13 @@ __meta__ = {
 [node name="RichTextLabel5" type="RichTextLabel" parent="."]
 anchor_left = 0.000111103
 anchor_right = 0.000111103
-margin_left = 715.7
-margin_top = 25.9181
-margin_right = 996.7
-margin_bottom = 90.9181
+margin_left = 135.886
+margin_top = 26.0
+margin_right = 996.886
+margin_bottom = 91.0
 custom_fonts/normal_font = ExtResource( 24 )
 custom_colors/font_color_shadow = Color( 0.270588, 0.439216, 0.47451, 1 )
-text = "TITLE"
+text = "The Great Duckscape"
 __meta__ = {
 "_edit_use_anchors_": false
 }
